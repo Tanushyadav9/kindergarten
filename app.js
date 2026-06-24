@@ -1,6 +1,6 @@
-/* ==========================================
-   KINDERGARTEN CLIENT APP JS - REDESIGNED
-   ========================================== */
+/* =======================================================
+   KINDERGARTEN CLIENT APP JS - PREMIUM UPGRADE LOCALIZED
+   ======================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
   initRouter();
@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initQuickContactForm();
   initFaqAccordion();
   initVirtualTourModal();
+  initBookTourPopup();
 });
 
 /* --- Toast Notification Helper --- */
@@ -33,7 +34,7 @@ function showToast(message, type = 'success') {
    1. Client-side Routing & Navigation
    ========================================== */
 function initRouter() {
-  const pages = ['home', 'admissions', 'locate-us', 'educators'];
+  const pages = ['home', 'admissions', 'locate-us', 'educators', 'events'];
   
   function handleRoute() {
     let hash = window.location.hash || '#home';
@@ -603,9 +604,9 @@ function initLocateUsMap() {
   const mapContainer = document.getElementById('map');
   if (!mapContainer) return;
   
-  // Coordinates for our playschool (Sunshine Heights district)
-  const lat = 40.6974;
-  const lng = -73.9933;
+  // Gurgaon Sector 15 coordinates
+  const lat = 28.4595;
+  const lng = 77.0266;
   
   // Create map
   const map = L.map('map', {
@@ -625,8 +626,8 @@ function initLocateUsMap() {
   
   marker.bindPopup(`
     <div style="text-align: center;">
-      <h4 style="margin: 0 0 4px 0; color: #db2777; font-family: 'Fredoka', sans-serif;">Kindergarten Preschool</h4>
-      <p style="margin: 0; font-size: 13px; font-weight: 500;">123 Blossom Lane, Sunshine Heights</p>
+      <h4 style="margin: 0 0 4px 0; color: #db2777; font-family: 'Fredoka', sans-serif;">Kindergarten Gurgaon</h4>
+      <p style="margin: 0; font-size: 13px; font-weight: 500;">Plot No. 45, Sector 15, Gurgaon</p>
       <a href="#admissions#enrollment-section" style="display:inline-block; margin-top:8px; background:#0284c7; color:white; padding:4px 10px; border-radius:50px; text-decoration:none; font-size:11px; font-weight:600;">Apply Online</a>
     </div>
   `).openPopup();
@@ -643,14 +644,15 @@ function updateOpeningStatus() {
   const day = now.getDay();
   const hour = now.getHours();
   
+  // Timing hours: Mon-Fri 8:30 AM to 1:30 PM (hour < 8 || (hour === 8 && minute < 30) or hour >= 13 && minute >= 30 etc. Let's make it simpler)
   if (day === 0 || day === 6) {
     statusTag.textContent = 'Closed (Weekend)';
     statusTag.className = 'timing-status-tag closed';
-  } else if (hour < 8 || hour >= 15) {
-    statusTag.textContent = 'Closed Now (Hours: 8 AM - 3 PM)';
+  } else if (hour < 8 || (hour === 8 && now.getMinutes() < 30) || hour >= 13 && (hour > 13 || now.getMinutes() >= 30)) {
+    statusTag.textContent = 'Closed Now (Hours: 8:30 AM - 1:30 PM)';
     statusTag.className = 'timing-status-tag closed';
   } else {
-    statusTag.textContent = 'Open Now (Hours: 8 AM - 3 PM)';
+    statusTag.textContent = 'Open Now (Hours: 8:30 AM - 1:30 PM)';
     statusTag.className = 'timing-status-tag open';
   }
 }
@@ -733,5 +735,57 @@ function initVirtualTourModal() {
     if (e.target === modal) {
       closeModal();
     }
+  });
+}
+
+/* ==========================================
+   12. Book a School Tour Popup Modal
+   ========================================== */
+function initBookTourPopup() {
+  const modal = document.getElementById('book-tour-popup');
+  const openBtnHero = document.getElementById('btn-trigger-tour');
+  const closeBtn = document.getElementById('book-tour-close');
+  const form = document.getElementById('book-tour-form');
+  
+  const formBlock = document.getElementById('book-tour-form-block');
+  const successBlock = document.getElementById('book-tour-success-block');
+  const closeSuccessBtn = document.getElementById('btn-close-tour-success');
+  
+  if (!modal || !closeBtn || !form) return;
+  
+  function openModal() {
+    form.reset();
+    formBlock.style.display = 'block';
+    successBlock.style.display = 'none';
+    modal.classList.add('active');
+  }
+  
+  function closeModal() {
+    modal.classList.remove('active');
+  }
+  
+  if (openBtnHero) openBtnHero.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  if (closeSuccessBtn) closeSuccessBtn.addEventListener('click', closeModal);
+  
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+  
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const parentPhone = document.getElementById('tour-parent-phone').value;
+    const tourDateVal = document.getElementById('tour-date').value;
+    
+    // Swap form block to success confirmation template block
+    formBlock.style.display = 'none';
+    document.getElementById('tour-success-phone').textContent = parentPhone;
+    document.getElementById('tour-success-date').textContent = tourDateVal;
+    successBlock.style.display = 'block';
+    
+    showToast('Campus tour scheduled successfully!', 'success');
   });
 }

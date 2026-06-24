@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kindergarten Preschool - Nurturing Young Minds, Building Bright Futures</title>
-  <meta name="description" content="Welcome to Kindergarten, a premium, professional preschool dedicated to child-centric early education, play, and admissions-focused development. Enroll today!">
+  <meta name="description" content="Welcome to Kindergarten, a premium, professional preschool in Gurgaon. Child-centric early education, smart classrooms, daycare, and admissions. Enroll today!">
   
   <!-- Leaflet Map CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -13,21 +13,32 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 
   <!-- Background Decorative Ornaments -->
   <div class="cloud-bg"></div>
 
+  <!-- --- EMERGENCY & TRUST CONTACT BANNER --- -->
+  <div class="emergency-banner">
+    <div class="container emergency-flex">
+      <span><i class="fa-solid fa-shield-halved"></i> Gurgaon's No. 1 Safe & Secure Smart Preschool</span>
+      <div class="emergency-contacts">
+        <span><i class="fa-solid fa-phone"></i> Emergency Care: +91 124 4567890</span>
+        <span><i class="fa-solid fa-location-dot"></i> Plot No. 45, Sector 15, Gurgaon</span>
+      </div>
+    </div>
+  </div>
+
   <!-- --- FLOATING CONTACT WIDGETS --- -->
   <div class="floating-ctas-container">
-    <a href="tel:+15551234567" class="float-cta call" aria-label="Call Admissions">
+    <a href="tel:+919876543210" class="float-cta call" aria-label="Call Admissions">
       <i class="fa-solid fa-phone"></i>
       <span class="float-badge">1</span>
       <span class="float-tooltip">Call Admissions</span>
     </a>
-    <a href="https://wa.me/15551234567" target="_blank" class="float-cta whatsapp" aria-label="WhatsApp Chat">
+    <a href="https://wa.me/919876543210" target="_blank" class="float-cta whatsapp" aria-label="WhatsApp Chat">
       <i class="fa-brands fa-whatsapp"></i>
       <span class="float-tooltip">Chat with us</span>
     </a>
@@ -56,6 +67,7 @@
         <li class="nav-item" data-page="home"><a href="#home" class="nav-link">Home</a></li>
         <li class="nav-item" data-page="programs"><a href="#home#programs-section" class="nav-link">Programs</a></li>
         <li class="nav-item" data-page="educators"><a href="#educators" class="nav-link">Educators</a></li>
+        <li class="nav-item" data-page="events"><a href="#events" class="nav-link">Events</a></li>
         <li class="nav-item" data-page="gallery"><a href="#home#gallery-section" class="nav-link">Gallery</a></li>
         <li class="nav-item" data-page="admissions"><a href="#admissions" class="nav-link">Admissions</a></li>
         <li class="nav-item" data-page="locate-us"><a href="#locate-us" class="nav-link">Locate Us</a></li>
@@ -80,16 +92,26 @@
             Nurturing Young Minds,<br>Building <span class="pink">Bright Futures</span>
           </h1>
           <p class="hero-desc">
-            A premium early-childhood learning center blending global Montessori frameworks with a warm, activity-based environment. We spark creative curiosity, confidence, and social growth.
+            An established, premium preschool in Gurgaon blending early Montessori structures with safe activity-based smart classrooms. We lay the foundations for logical reasoning, speaking clarity, and creative exploration.
           </p>
+          
+          <!-- Trust Badges List -->
+          <div class="hero-trust-badges">
+            <span class="trust-badge-item"><i class="fa-solid fa-circle-check text-green"></i> Admissions Open</span>
+            <span class="trust-badge-item"><i class="fa-solid fa-circle-check text-green"></i> CCTV Monitored</span>
+            <span class="trust-badge-item"><i class="fa-solid fa-circle-check text-green"></i> Activity Learning</span>
+            <span class="trust-badge-item"><i class="fa-solid fa-circle-check text-green"></i> Safe Transport</span>
+          </div>
+
           <div class="hero-ctas">
             <a href="#admissions#enrollment-section" class="btn-primary">Apply for Admission <i class="fa-solid fa-file-signature"></i></a>
-            <a href="#locate-us#contact-form" class="btn-secondary">Book a School Tour <i class="fa-solid fa-calendar-check"></i></a>
+            <button class="btn-secondary" id="btn-trigger-tour">Book a School Tour <i class="fa-solid fa-calendar-check"></i></button>
           </div>
         </div>
         <div class="hero-images-container">
           <div class="hero-img-card">
-            <img src="assets/hero_kids.png" alt="Happy children playing and studying in a colorful preschool environment">
+            <!-- Pushed realistic photo asset -->
+            <img src="assets/hero_kids.png" alt="Happy toddlers studying in a premium Indian preschool smart classroom">
             <div class="hero-badge">
               <span>ESTD</span>
               2011
@@ -105,21 +127,23 @@
       <path d="M0,32L80,37.3C160,43,320,53,480,48C640,43,800,21,960,16C1120,11,1280,21,1360,26.7L1440,32L1440,74L1360,74C1280,74,1120,74,960,74C800,74,640,74,480,74C320,74,160,74,80,74L0,74Z"></path>
     </svg>
 
-    <!-- Quick Statistics Bar -->
-    <section class="stats-section" style="background-color: var(--color-cream); padding: 20px 0;">
-      <div class="container">
+    <!-- Why 500+ Parents Trust Us Section -->
+    <section class="stats-section" style="background-color: var(--color-cream); padding: 50px 0;">
+      <div class="container text-center">
+        <h2 class="section-title">Why 500+ Parents <span>Trust Kindergarten</span></h2>
+        <p class="section-subtitle" style="margin-bottom: 36px;">Our statistics reflect our dedication to creating a premium early learning atmosphere in Gurgaon.</p>
         <div class="stats-bar" style="margin-top: 0; margin-bottom: 0;">
           <div class="stat-item">
             <div class="stat-num" data-target="500">0</div>
-            <div class="stat-label">Students Enrolled</div>
+            <div class="stat-label">Happy Students</div>
           </div>
           <div class="stat-item">
             <div class="stat-num" data-target="25">0</div>
-            <div class="stat-label">Expert Educators</div>
+            <div class="stat-label">Qualified Educators</div>
           </div>
           <div class="stat-item">
             <div class="stat-num" data-target="10">0</div>
-            <div class="stat-label">National Awards</div>
+            <div class="stat-label">School Awards</div>
           </div>
           <div class="stat-item">
             <div class="stat-num" data-target="15">0</div>
@@ -133,58 +157,58 @@
       <path d="M0,32L80,37.3C160,43,320,53,480,48C640,43,800,21,960,16C1120,11,1280,21,1360,26.7L1440,32L1440,74L1360,74C1280,74,1120,74,960,74C800,74,640,74,480,74C320,74,160,74,80,74L0,74Z"></path>
     </svg>
 
-    <!-- Why Choose Us Section -->
+    <!-- Why Choose Us Cards Section -->
     <section class="why-choose-section section-padding">
       <div class="container text-center">
-        <h2 class="section-title">Why Parents <span>Choose Us</span></h2>
-        <p class="section-subtitle">We go beyond simple tutoring. We foster safety, digital integration, and empathetic teaching to build global citizens.</p>
+        <h2 class="section-title">Why Choose <span>Our School</span></h2>
+        <p class="section-subtitle">We build environments that foster logical thinking, sensory learning, and child comfort.</p>
         
         <div class="why-choose-grid">
           <!-- Card 1 -->
           <div class="why-card sky">
             <div class="why-icon"><i class="fa-solid fa-child"></i></div>
             <h3>Child-Centric Learning</h3>
-            <p>Every activity is tailored to match individual cognitive speeds, ensuring your child never feels rushed or left behind.</p>
+            <p>Every activity adapts to individual growth speeds, ensuring toddlers develop logical skills at their own comfortable pace.</p>
           </div>
           <!-- Card 2 -->
           <div class="why-card pink">
             <div class="why-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
             <h3>Experienced Educators</h3>
-            <p>Certified trainers in early education and behavioral psychology dedicate individual care for core developmental milestones.</p>
+            <p>Certified trainers in early care and child psychology dedicate emotional guidance to help students transition cleanly.</p>
           </div>
           <!-- Card 3 -->
           <div class="why-card green">
             <div class="why-icon"><i class="fa-solid fa-shield-cat"></i></div>
             <h3>Safe & Secure Campus</h3>
-            <p>Monitored via 24/7 high-res CCTV surveillance, soft-edged furniture, biometric gates, and pediatric emergency protocols.</p>
+            <p>Monitored via 24/7 high-res CCTV surveillance, soft-edged play zones, gated biometrics, and active safety officers.</p>
           </div>
           <!-- Card 4 -->
           <div class="why-card yellow">
             <div class="why-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
             <h3>Activity-Based Learning</h3>
-            <p>Tactile sandbox kits, spelling wheels, logic blocks, and physical obstacles to stimulate sensory development.</p>
+            <p>Hands-on sandbox tables, phonics sound grids, logical puzzle boards, and organic paint tubs to spark coordination.</p>
           </div>
           <!-- Card 5 -->
           <div class="why-card purple">
             <div class="why-icon"><i class="fa-solid fa-laptop-code"></i></div>
             <h3>Smart Classrooms</h3>
-            <p>Equipped with child-friendly interactive screens, digital audio playbooks, and modern science observation desks.</p>
+            <p>Preschoolers learn via child-friendly digital touchscreens, graphical audiobooks, and basic puzzle screen keys.</p>
           </div>
           <!-- Card 6 -->
           <div class="why-card orange">
             <div class="why-icon"><i class="fa-solid fa-comments"></i></div>
             <h3>Parent Communication</h3>
-            <p>Get real-time updates on attendance, behavior trends, and lunch updates via our dedicated parenting portal app.</p>
+            <p>Mothers and fathers receive live progress updates, menu changes, and check-in times on our parent app portals.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Programs Quick Overview -->
+    <!-- Core Programs Quick Preview -->
     <section id="programs-section" class="programs-section section-padding" style="background-color: var(--color-cream);">
       <div class="container text-center">
-        <h2 class="section-title">Core <span>Academic Classes</span></h2>
-        <p class="section-subtitle">A curriculum tailored to early age brackets, helping them build literacy, coordination, and independence.</p>
+        <h2 class="section-title">Nurturing <span>Academic Programs</span></h2>
+        <p class="section-subtitle">Specially structured syllabus blocks designed around age-appropriate motor and cognitive stages.</p>
         
         <div class="programs-overview-grid">
           <!-- Playgroup -->
@@ -193,8 +217,8 @@
             <div class="prog-content">
               <span class="prog-badge">1.5 - 2.5 Years</span>
               <h3>Playgroup</h3>
-              <p>Focuses on speaking, fine motor skills, toy sharing adjustments, and gross coordinate balance in custom foam zones.</p>
-              <a href="#admissions" class="prog-learn-more" data-tab="playgroup">Curriculum Details <i class="fa-solid fa-angle-right"></i></a>
+              <p>Sensory toy play, basic muscle grips, toilet guidelines, and vocal rhythm matching in foam-cushioned zones.</p>
+              <a href="#admissions" class="prog-learn-more" data-tab="playgroup">View Syllabus <i class="fa-solid fa-angle-right"></i></a>
             </div>
           </div>
           <!-- Nursery -->
@@ -203,8 +227,8 @@
             <div class="prog-content">
               <span class="prog-badge">2.5 - 3.5 Years</span>
               <h3>Nursery</h3>
-              <p>Introducing letter phonics, alphabet sounds, watercolor painting, building logical grids, and group storytelling sessions.</p>
-              <a href="#admissions" class="prog-learn-more" data-tab="nursery">Curriculum Details <i class="fa-solid fa-angle-right"></i></a>
+              <p>Phonics sounds, trace lines, identifying colors and shapes, clay shapes modeling, and group singing drills.</p>
+              <a href="#admissions" class="prog-learn-more" data-tab="nursery">View Syllabus <i class="fa-solid fa-angle-right"></i></a>
             </div>
           </div>
           <!-- Junior KG -->
@@ -213,8 +237,8 @@
             <div class="prog-content">
               <span class="prog-badge">3.5 - 4.5 Years</span>
               <h3>Junior KG</h3>
-              <p>Structured word building, tracing drills, early environmental science, addition block math, and social dialogue.</p>
-              <a href="#admissions" class="prog-learn-more" data-tab="junior">Curriculum Details <i class="fa-solid fa-angle-right"></i></a>
+              <p>Tracing alphabet sequences, math numbers, simple sentence structures, gardening, and basic social dialog codes.</p>
+              <a href="#admissions" class="prog-learn-more" data-tab="junior">View Syllabus <i class="fa-solid fa-angle-right"></i></a>
             </div>
           </div>
           <!-- Senior KG -->
@@ -223,60 +247,113 @@
             <div class="prog-content">
               <span class="prog-badge">4.5 - 5.5 Years</span>
               <h3>Senior KG</h3>
-              <p>Advanced spelling, subtraction, basic computer actions, team leadership exercises, and transition mock schedules.</p>
-              <a href="#admissions" class="prog-learn-more" data-tab="senior">Curriculum Details <i class="fa-solid fa-angle-right"></i></a>
+              <p>Reading short stories, logic subtractions, team tasks, show-and-tell talking, and mock primary school timetables.</p>
+              <a href="#admissions" class="prog-learn-more" data-tab="senior">View Syllabus <i class="fa-solid fa-angle-right"></i></a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Additional Special Programs (Daycare & Summer Camp) -->
-    <section class="special-programs-section section-padding">
+    <!-- Modern Facilities Showcase -->
+    <section class="facilities-section section-padding">
       <div class="container text-center">
-        <h2 class="section-title">Special <span>Extended Programs</span></h2>
-        <p class="section-subtitle">Flexible support systems for working parent routines and fun creative extensions for your child.</p>
+        <h2 class="section-title">Our Premium <span>Facilities</span></h2>
+        <p class="section-subtitle">We maintain modern infrastructure and safety structures to build a home-away-from-home environment.</p>
         
-        <div class="special-prog-grid">
-          <!-- Daycare -->
-          <div class="special-prog-card daycare">
-            <div class="special-prog-header">
-              <div class="special-prog-icon">🧸</div>
-              <span class="special-prog-badge">Full & Half Day</span>
-            </div>
-            <h3>Cozy Daycare Program</h3>
-            <p>Our safe daycare offers structured nap spaces, fresh nutritional meals customized by pediatricians, indoor play yards, and homework assistance for kids aged 2 to 8 years.</p>
-            <ul class="special-prog-features">
-              <li>Open till 6:30 PM</li>
-              <li>Fresh Organic Snacks</li>
-              <li>Toddler Safe Gates</li>
-              <li>Certified Caretakers</li>
-            </ul>
-            <a href="#admissions#enrollment-section" class="btn-primary">Inquire About Daycare <i class="fa-solid fa-chevron-right"></i></a>
+        <div class="facilities-grid-container">
+          <!-- Facility 1 -->
+          <div class="facility-card">
+            <div class="facility-icon-box bg-sky"><i class="fa-solid fa-desktop"></i></div>
+            <h4>Smart Classrooms</h4>
+            <p>Interactive display systems, digital audio playbooks, and soft kid-friendly seating.</p>
           </div>
+          <!-- Facility 2 -->
+          <div class="facility-card">
+            <div class="facility-icon-box bg-green"><i class="fa-solid fa-circle-play"></i></div>
+            <h4>Outdoor Playground</h4>
+            <p>Rubberized safety turf, colorful slides, slides and balancing logs.</p>
+          </div>
+          <!-- Facility 3 -->
+          <div class="facility-card">
+            <div class="facility-icon-box bg-pink"><i class="fa-solid fa-shapes"></i></div>
+            <h4>Indoor Play Zone</h4>
+            <p>Foam-padded walls, giant building blocks, sensory pits, and activity tables.</p>
+          </div>
+          <!-- Facility 4 -->
+          <div class="facility-card">
+            <div class="facility-icon-box bg-yellow"><i class="fa-solid fa-book-open"></i></div>
+            <h4>Library Corner</h4>
+            <p>Low-height shelves packed with picture books, touch-and-feel books, and audio tales.</p>
+          </div>
+          <!-- Facility 5 -->
+          <div class="facility-card">
+            <div class="facility-icon-box bg-purple"><i class="fa-solid fa-palette"></i></div>
+            <h4>Art & Craft Studio</h4>
+            <p>Mess-friendly color tables, clay wheels, drawing easels, and craft boards.</p>
+          </div>
+          <!-- Facility 6 -->
+          <div class="facility-card">
+            <div class="facility-icon-box bg-orange"><i class="fa-solid fa-shield-halved"></i></div>
+            <h4>CCTV & Safety Gating</h4>
+            <p>Biometric entrance checks, continuous surveillance, and soft-cushioned corners.</p>
+          </div>
+          <!-- Facility 7 -->
+          <div class="facility-card">
+            <div class="facility-icon-box bg-sky"><i class="fa-solid fa-briefcase-medical"></i></div>
+            <h4>Medical Assistance Room</h4>
+            <p>Full-time certified nurse, routine checkups, and childproofing care kits.</p>
+          </div>
+          <!-- Facility 8 -->
+          <div class="facility-card">
+            <div class="facility-icon-box bg-green"><i class="fa-solid fa-bus"></i></div>
+            <h4>GPS-Tracked Shuttles</h4>
+            <p>Safety transport shuttles fitted with cameras, seat belts, and female assistants.</p>
+          </div>
+          <!-- Facility 9 -->
+          <div class="facility-card">
+            <div class="facility-icon-box bg-pink"><i class="fa-solid fa-utensils"></i></div>
+            <h4>Nutritional Dining Yard</h4>
+            <p>Fresh organic snacks and balanced meals planned by expert pediatric nutritionists.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- Summer Camp -->
-          <div class="special-prog-card summer">
-            <div class="special-prog-header">
-              <div class="special-prog-icon">☀️</div>
-              <span class="special-prog-badge">April - June</span>
-            </div>
-            <h3>Vibrant Summer Camp</h3>
-            <p>Keep your child's weekends and vacations exciting! A specialized camp that introduces clay pottery, canvas painting, interactive spelling contests, kids theater, and musical instruments.</p>
-            <ul class="special-prog-features">
-              <li>Music & Rhythms</li>
-              <li>Mini Gardening</li>
-              <li>Magic Science Kits</li>
-              <li>Certificate Awarded</li>
-            </ul>
-            <a href="#admissions#enrollment-section" class="btn-primary" style="background: linear-gradient(135deg, var(--color-orange-main), var(--color-orange-dark)); box-shadow: 0 8px 20px rgba(251, 146, 60, 0.25);">Register for Camp <i class="fa-solid fa-chevron-right"></i></a>
+    <!-- Awards & Recognitions Showcase -->
+    <section class="awards-section section-padding" style="background-color: var(--color-cream);">
+      <div class="container text-center">
+        <h2 class="section-title">Awards & <span>Accreditations</span></h2>
+        <p class="section-subtitle">Our consistent focus on early syllabus innovation and security controls has won us national titles.</p>
+        
+        <div class="awards-trophy-flex">
+          <!-- Award 1 -->
+          <div class="award-trophy-card">
+            <div class="award-badge-ribbon">🏆</div>
+            <h4>No. 1 Premium Preschool</h4>
+            <span class="award-year-node">2025</span>
+            <p>Awarded by Gurgaon Education Association for early infrastructure & child safety measures.</p>
+          </div>
+          <!-- Award 2 -->
+          <div class="award-trophy-card">
+            <div class="award-badge-ribbon">🏅</div>
+            <h4>Innovative Montessori Syllabus</h4>
+            <span class="award-year-node">2024</span>
+            <p>National Preschool Summit title for introducing smart classes and sensory play boxes.</p>
+          </div>
+          <!-- Award 3 -->
+          <div class="award-trophy-card">
+            <div class="award-badge-ribbon">🛡️</div>
+            <h4>100% Safe Campus Certification</h4>
+            <span class="award-year-node">2023 - 2026</span>
+            <p>Gold-standard security audit score covering fire controls, biometric gates, and child safety gates.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Virtual Tour Section Banner -->
-    <section class="virtual-tour-section section-padding" style="background-color: var(--color-cream);">
+    <section class="virtual-tour-section section-padding">
       <div class="container">
         <div class="virtual-tour-banner">
           <div class="virtual-tour-text">
@@ -299,7 +376,6 @@
       <div class="tour-modal-content">
         <button class="tour-modal-close" id="tour-modal-close"><i class="fa-solid fa-xmark"></i></button>
         <div class="tour-video-wrapper">
-          <!-- Mocking video using custom slides -->
           <div class="tour-mockup-slide">
             <div style="font-size: 5rem; margin-bottom: 20px;">🏫</div>
             <h3>Kindergarten Campus Virtual Tour</h3>
@@ -313,8 +389,8 @@
     <!-- Parent Testimonials Section -->
     <section class="testimonials-section section-padding">
       <div class="container text-center">
-        <h2 class="section-title">What <span>Parents</span> Say</h2>
-        <p class="section-subtitle">We have earned the trust of over 500 parents. Read their reviews and success stories.</p>
+        <h2 class="section-title">What <span>Parents Say</span></h2>
+        <p class="section-subtitle">Real reviews and ratings from local Gurgaon families who trust us with their child's safety and milestones.</p>
         
         <div class="testimonials-carousel-wrapper">
           <button class="carousel-nav-btn prev" id="carousel-prev" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
@@ -324,42 +400,45 @@
             <!-- Slide 1 -->
             <div class="testimonial-slide">
               <div class="testimonial-bubble">
+                <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                 <i class="fa-solid fa-quote-left testimonial-quote-icon"></i>
-                <p>"Sending our daughter Lily to Kindergarten was the best decision we made. She used to be very shy, but in just six months, her confidence skyrocketed. She wakes up excited to go to school every single day!"</p>
+                <p>"Sending our daughter Lily to Kindergarten Sector 15 was the best decision we made. She used to be very shy during drop-offs, but in just 4 months her confidence bloomed. She loves the circle singing and sandpit games!"</p>
               </div>
               <div class="testimonial-author">
                 <div class="author-avatar">👩</div>
                 <div class="author-info">
-                  <h4>Rebecca Watson</h4>
-                  <span>Mother of Lily (Junior KG)</span>
+                  <h4>Ritu Kapoor</h4>
+                  <span>Mother of Lily (Junior KG), Gurgaon</span>
                 </div>
               </div>
             </div>
             <!-- Slide 2 -->
             <div class="testimonial-slide">
               <div class="testimonial-bubble">
+                <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                 <i class="fa-solid fa-quote-left testimonial-quote-icon"></i>
-                <p>"The teachers at Kindergarten are absolute saints. They understand child behavioral psychology so well. The updates we receive on the child's milestones show how closely they focus on each pupil."</p>
+                <p>"The security features here are incredible. Having biometric check-ins and getting instant app updates on when my son enters and leaves the school gives me total peace of mind. The educators are deeply qualified."</p>
               </div>
               <div class="testimonial-author">
                 <div class="author-avatar">👨</div>
                 <div class="author-info">
-                  <h4>Michael Chen</h4>
-                  <span>Father of Leo (Nursery)</span>
+                  <h4>Amit Singhal</h4>
+                  <span>Father of Aarav (Nursery), DLF Phase 3</span>
                 </div>
               </div>
             </div>
             <!-- Slide 3 -->
             <div class="testimonial-slide">
               <div class="testimonial-bubble">
+                <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                 <i class="fa-solid fa-quote-left testimonial-quote-icon"></i>
-                <p>"The campus safety and cleaning processes are fantastic. As a working mother, my main worry was security and nutrition, but their CCTV accessibility and nutritional meals program solved everything for me."</p>
+                <p>"Our daughter Chloe has learned basic phonics, coding actions, and sharing rules beautifully. The preschool bus service is prompt, safe, and always accompanied by a sweet female caretaker."</p>
               </div>
               <div class="testimonial-author">
                 <div class="author-avatar">👩</div>
                 <div class="author-info">
-                  <h4>Sarah McArthur</h4>
-                  <span>Mother of Chloe (Playgroup)</span>
+                  <h4>Priya Patel</h4>
+                  <span>Mother of Chloe (Playgroup), Sector 45</span>
                 </div>
               </div>
             </div>
@@ -374,58 +453,8 @@
       </div>
     </section>
 
-    <!-- School Blog Section -->
-    <section class="blog-section section-padding" style="background-color: var(--color-cream);">
-      <div class="container text-center">
-        <h2 class="section-title">Parenting <span>Tips & Blogs</span></h2>
-        <p class="section-subtitle">Helpful insights and advice prepared by our childhood education experts and psychologists.</p>
-        
-        <div class="blog-grid">
-          <!-- Article 1 -->
-          <div class="blog-card">
-            <div class="blog-thumbnail-stub">🧸</div>
-            <div class="blog-content">
-              <div class="blog-meta">
-                <span class="blog-tag">Child Psychology</span>
-                <span>June 24, 2026</span>
-              </div>
-              <h3>Managing Toddler Separation Anxiety</h3>
-              <p>Practical routines and emotional guidelines to prepare your little explorer for their initial preschool terms.</p>
-              <a href="#admissions#enrollment-section" class="blog-readmore">Read Article <i class="fa-solid fa-arrow-right-long"></i></a>
-            </div>
-          </div>
-          <!-- Article 2 -->
-          <div class="blog-card">
-            <div class="blog-thumbnail-stub">🥗</div>
-            <div class="blog-content">
-              <div class="blog-meta">
-                <span class="blog-tag">Nutrition</span>
-                <span>June 18, 2026</span>
-              </div>
-              <h3>Brain-boosting Meals for Preschoolers</h3>
-              <p>Simple, organic lunch recipes loaded with key vitamins to sustain child energy and help logical concentration.</p>
-              <a href="#admissions#enrollment-section" class="blog-readmore">Read Article <i class="fa-solid fa-arrow-right-long"></i></a>
-            </div>
-          </div>
-          <!-- Article 3 -->
-          <div class="blog-card">
-            <div class="blog-thumbnail-stub">🧩</div>
-            <div class="blog-content">
-              <div class="blog-meta">
-                <span class="blog-tag">Learning Play</span>
-                <span>June 12, 2026</span>
-              </div>
-              <h3>Sensory Toys You Can Create at Home</h3>
-              <p>Five easy DIY activity setups using sandbox jars, clay patterns, and water grids to boost fine motor skills.</p>
-              <a href="#admissions#enrollment-section" class="blog-readmore">Read Article <i class="fa-solid fa-arrow-right-long"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Gallery Section -->
-    <section id="gallery-section" class="gallery-section section-padding">
+    <section id="gallery-section" class="gallery-section section-padding" style="background-color: var(--color-cream);">
       <div class="container text-center">
         <h2 class="section-title">Life at <span>Kindergarten</span></h2>
         <p class="section-subtitle">Take a look inside our classrooms, play zones, and events to see our learning methods in action.</p>
@@ -508,81 +537,6 @@
       </div>
     </div>
 
-    <!-- Parent FAQs Accordion -->
-    <section class="faq-section section-padding" style="background-color: var(--color-cream);">
-      <div class="container text-center">
-        <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
-        <p class="section-subtitle">Common questions from parents about our syllabus, admission, hygiene, and bus systems.</p>
-        
-        <div class="faq-accordion">
-          <!-- FAQ 1 -->
-          <div class="faq-item">
-            <div class="faq-header">
-              <h3>What is the educator-to-student ratio at Kindergarten?</h3>
-              <div class="faq-icon-node"><i class="fa-solid fa-chevron-down"></i></div>
-            </div>
-            <div class="faq-body">
-              <div class="faq-content">
-                To guarantee specialized care, we maintain a 1:8 ratio for Playgroup & Nursery, and a 1:12 ratio for Junior and Senior KG. Each classroom has a lead educator and a certified care assistant.
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 2 -->
-          <div class="faq-item">
-            <div class="faq-header">
-              <h3>How do you manage campus hygiene and medical needs?</h3>
-              <div class="faq-icon-node"><i class="fa-solid fa-chevron-down"></i></div>
-            </div>
-            <div class="faq-body">
-              <div class="faq-content">
-                Our classrooms are fully sanitized twice daily. We employ a full-time certified pediatric nurse and hold active contracts with Blossom Medical center, located 5 minutes away, for quick emergency responses.
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 3 -->
-          <div class="faq-item">
-            <div class="faq-header">
-              <h3>Is real-time GPS tracking available for school buses?</h3>
-              <div class="faq-icon-node"><i class="fa-solid fa-chevron-down"></i></div>
-            </div>
-            <div class="faq-body">
-              <div class="faq-content">
-                Yes! Every school shuttle bus is integrated with GPS tracking units linked to our parenting mobile app. Parents receive automatic notification alerts when the shuttle enters a 500-meter radius of their pickup stop.
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 4 -->
-          <div class="faq-item">
-            <div class="faq-header">
-              <h3>What syllabus does your curriculum align with?</h3>
-              <div class="faq-icon-node"><i class="fa-solid fa-chevron-down"></i></div>
-            </div>
-            <div class="faq-body">
-              <div class="faq-content">
-                Our curriculum aligns with the Montessori philosophy blended with early EYFS (Early Years Foundation Stage) standards, preparing children to adapt seamlessly to any primary curriculum (CBSE, ICSE, or IB boards).
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 5 -->
-          <div class="faq-item">
-            <div class="faq-header">
-              <h3>Are nutritional meals provided during class hours?</h3>
-              <div class="faq-icon-node"><i class="fa-solid fa-chevron-down"></i></div>
-            </div>
-            <div class="faq-body">
-              <div class="faq-content">
-                Yes. Parents can opt-in to our daily nutritional plan. Meals are prepared organic, nut-free, and balanced by pediatric nutritionists. A weekly menu card is shared on our parent portal.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Final Admissions CTA Section -->
     <section class="cta-section section-padding">
       <div class="container">
@@ -601,41 +555,134 @@
   <main id="admissions" class="page-route">
     <section class="section-padding bg-wave-container">
       <div class="container text-center">
-        <h2 class="section-title">Admission <span>Center</span></h2>
-        <p class="section-subtitle">Simple admissions process, eligibility checks, fee structures, and immediate online applications.</p>
+        <h2 class="section-title">Our Admission <span>Journey</span></h2>
+        <p class="section-subtitle">We maintain a transparent, 6-step registration flow to help families enroll their child cleanly.</p>
 
-        <!-- Admission Steps Timeline -->
-        <div class="admission-steps section-padding">
-          <div class="admission-step-card">
-            <div class="step-num-badge">1</div>
-            <h3>1. Online Inquiry</h3>
-            <p>Submit basic details about your child via our wizard below to check seat availability.</p>
+        <!-- Admission Steps Timeline (6 steps) -->
+        <div class="admission-journey-grid">
+          <!-- Step 1 -->
+          <div class="journey-step-card">
+            <div class="journey-num">1</div>
+            <h4>Online Inquiry</h4>
+            <p>Fill out the online application form below sharing child dates and your contact details.</p>
           </div>
-          <div class="admission-step-card">
-            <div class="step-num-badge">2</div>
-            <h3>2. School Visit</h3>
-            <p>Tour the campus, check sanitization structures, meet class educators, and sit in a trial class.</p>
+          <!-- Step 2 -->
+          <div class="journey-step-card">
+            <div class="journey-num">2</div>
+            <h4>School Visit</h4>
+            <p>Schedule a personal school tour to meet the Principal, view smart classrooms, and see facilities.</p>
           </div>
-          <div class="admission-step-card">
-            <div class="step-num-badge">3</div>
-            <h3>3. Document Review</h3>
-            <p>Provide basic records (DOB, immunization check, parent ID details) for confirmation checks.</p>
+          <!-- Step 3 -->
+          <div class="journey-step-card">
+            <div class="journey-num">3</div>
+            <h4>Application Form</h4>
+            <p>Submit the detailed physical admission kit along with the required document list.</p>
           </div>
-          <div class="admission-step-card">
-            <div class="step-num-badge">4</div>
-            <h3>4. Secure Seat</h3>
-            <p>Complete formal registration and receive a Welcome Bag containing timelines, calendars, and shirts.</p>
+          <!-- Step 4 -->
+          <div class="journey-step-card">
+            <div class="journey-num">4</div>
+            <h4>Child Interaction</h4>
+            <p>A friendly, stress-free interaction session with our teachers to verify school readiness levels.</p>
+          </div>
+          <!-- Step 5 -->
+          <div class="journey-step-card">
+            <div class="journey-num">5</div>
+            <h4>Seat Confirmation</h4>
+            <p>Verification of age eligibility checks, seat allotment, and tuition fee payments.</p>
+          </div>
+          <!-- Step 6 -->
+          <div class="journey-step-card">
+            <div class="journey-num">6</div>
+            <h4>Welcome Kit</h4>
+            <p>Collect the Welcome Bag containing uniforms, books, identity card tags, and calendar maps.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Programs & Detailed Curriculum Switcher -->
+    <!-- Daily School Life Routine Timeline -->
+    <section class="routine-section section-padding" style="background-color: #fffdf5;">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-title">A Day in <span>Child's Life</span></h2>
+          <p class="section-subtitle">A balanced daily schedule mixing quiet cognitive learning, active sandbox playground play, and creative art.</p>
+        </div>
+
+        <div class="routine-timeline-track">
+          <!-- Item 1 -->
+          <div class="routine-time-node">
+            <div class="time-stamp">08:30 AM</div>
+            <div class="time-details">
+              <h4>Welcome Time & Greet</h4>
+              <p>Warm welcomes from teachers, biometric entry logs, and hands sanitization routines.</p>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="routine-time-node">
+            <div class="time-stamp">09:00 AM</div>
+            <div class="time-details">
+              <h4>Circle Time & Rhymes</h4>
+              <p>Singing group nursery rhymes, emotion calendar logs, and verbal vocabulary games.</p>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="routine-time-node">
+            <div class="time-stamp">09:40 AM</div>
+            <div class="time-details">
+              <h4>Smart Class Learning</h4>
+              <p>Structured cognitive learning focusing on phonic sound charts, alphabet writing strokes, and arithmetic grids.</p>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div class="routine-time-node">
+            <div class="time-stamp">10:30 AM</div>
+            <div class="time-details">
+              <h4>Nutritional Snack Break</h4>
+              <p>Healthy balanced fruit snacking and socialization rules on shared dining yards.</p>
+            </div>
+          </div>
+          <!-- Item 5 -->
+          <div class="routine-time-node">
+            <div class="time-stamp">11:00 AM</div>
+            <div class="time-details">
+              <h4>Outdoor Turf Play</h4>
+              <p>Climbing safety balancing logs, sliding, sandbox toy digging, and basic physical coordinate games.</p>
+            </div>
+          </div>
+          <!-- Item 6 -->
+          <div class="routine-time-node">
+            <div class="time-stamp">11:45 AM</div>
+            <div class="time-details">
+              <h4>Story Session & Phonics</h4>
+              <p>Guided read-alongs using colorful high-contrast books and character storytelling desks.</p>
+            </div>
+          </div>
+          <!-- Item 7 -->
+          <div class="routine-time-node">
+            <div class="time-stamp">12:30 PM</div>
+            <div class="time-details">
+              <h4>Creative Art & Craft</h4>
+              <p>Mess-friendly painting, organic clay shapes sculpting, paper cutting, and building-block activities.</p>
+            </div>
+          </div>
+          <!-- Item 8 -->
+          <div class="routine-time-node">
+            <div class="time-stamp">01:30 PM</div>
+            <div class="time-details">
+              <h4>Departure & Handover</h4>
+              <p>Attendance logs, packing checkups, and biometric security-verified student handover to parents/buses.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Curriculum Showcases -->
     <section class="curriculum-section section-padding" style="background-color: var(--color-cream);">
       <div class="container">
         <div class="text-center">
           <h2 class="section-title">Age Eligibility & <span>Curricula</span></h2>
-          <p class="section-subtitle">Toggle through our standard courses to review age brackets, developmental goals, and schedules.</p>
+          <p class="section-subtitle">Toggle through our courses to inspect learning outcomes, schedules, and ages.</p>
         </div>
 
         <!-- Tab Buttons -->
@@ -666,12 +713,13 @@
             <div class="curr-panel-right">
               <h4>Typical Daily Routine</h4>
               <div class="schedule-list">
-                <div class="schedule-item"><span class="schedule-time">09:00 AM</span><span class="schedule-act">Arrival & Circle Play</span></div>
-                <div class="schedule-item"><span class="schedule-time">09:30 AM</span><span class="schedule-act">Alphabet Singing & Rhymes</span></div>
-                <div class="schedule-item"><span class="schedule-time">10:00 AM</span><span class="schedule-act">Tactile Toy Assembly</span></div>
-                <div class="schedule-item"><span class="schedule-time">10:45 AM</span><span class="schedule-act">Healthy Fruit Snack Time</span></div>
-                <div class="schedule-item"><span class="schedule-time">11:15 AM</span><span class="schedule-act">Sandpit & Slide Activity</span></div>
-                <div class="schedule-item"><span class="schedule-time">12:00 PM</span><span class="schedule-act">Nap Time or Story Hearing</span></div>
+                <div class="schedule-item"><span class="schedule-time">08:30 AM</span><span class="schedule-act">Arrival & Sanitization</span></div>
+                <div class="schedule-item"><span class="schedule-time">09:00 AM</span><span class="schedule-act">Circle singing & Rhyme Chant</span></div>
+                <div class="schedule-item"><span class="schedule-time">09:40 AM</span><span class="schedule-act">Foam Blocks & Tactile Play</span></div>
+                <div class="schedule-item"><span class="schedule-time">10:30 AM</span><span class="schedule-act">Healthy Organic Fruits Snack</span></div>
+                <div class="schedule-item"><span class="schedule-time">11:00 AM</span><span class="schedule-act">Playground Sandpit Games</span></div>
+                <div class="schedule-item"><span class="schedule-time">12:30 PM</span><span class="schedule-act">Sensory Painting / Clay Play</span></div>
+                <div class="schedule-item"><span class="schedule-time">01:30 PM</span><span class="schedule-act">Clean-up & Safe Departure</span></div>
               </div>
             </div>
           </div>
@@ -696,12 +744,13 @@
             <div class="curr-panel-right">
               <h4>Typical Daily Routine</h4>
               <div class="schedule-list">
-                <div class="schedule-item"><span class="schedule-time">09:00 AM</span><span class="schedule-act">Circle Talk & Emotion Charts</span></div>
-                <div class="schedule-item"><span class="schedule-time">09:30 AM</span><span class="schedule-act">Letter Phonics Sound Drill</span></div>
-                <div class="schedule-item"><span class="schedule-time">10:15 AM</span><span class="schedule-act">Arts, Crafts, & Clay Sculpting</span></div>
-                <div class="schedule-item"><span class="schedule-time">11:00 AM</span><span class="schedule-act">Snack & Sharing Practice</span></div>
-                <div class="schedule-item"><span class="schedule-time">11:30 AM</span><span class="schedule-act">Outdoor Obstacle Course</span></div>
-                <div class="schedule-item"><span class="schedule-time">12:00 PM</span><span class="schedule-act">Vocabulary Building Game</span></div>
+                <div class="schedule-item"><span class="schedule-time">08:30 AM</span><span class="schedule-act">Greeting & Biometric Log</span></div>
+                <div class="schedule-item"><span class="schedule-time">09:00 AM</span><span class="schedule-act">Phonic Alphabet Sound Drills</span></div>
+                <div class="schedule-item"><span class="schedule-time">09:40 AM</span><span class="schedule-act">Color Matching & Tracing easels</span></div>
+                <div class="schedule-item"><span class="schedule-time">10:30 AM</span><span class="schedule-act">Social Snacking & Sharing rules</span></div>
+                <div class="schedule-item"><span class="schedule-time">11:00 AM</span><span class="schedule-act">Gated Turf Slides & Play</span></div>
+                <div class="schedule-item"><span class="schedule-time">12:30 PM</span><span class="schedule-act">Storybooks Hour & Dialogues</span></div>
+                <div class="schedule-item"><span class="schedule-time">01:30 PM</span><span class="schedule-act">Pack-up & Parent Handover</span></div>
               </div>
             </div>
           </div>
@@ -726,12 +775,13 @@
             <div class="curr-panel-right">
               <h4>Typical Daily Routine</h4>
               <div class="schedule-list">
-                <div class="schedule-item"><span class="schedule-time">09:00 AM</span><span class="schedule-act">Morning Assembly & News</span></div>
-                <div class="schedule-item"><span class="schedule-time">09:30 AM</span><span class="schedule-act">Writing Drill (Alphabet/Numbers)</span></div>
-                <div class="schedule-item"><span class="schedule-time">10:30 AM</span><span class="schedule-act">Plant Growth / Nature Observation</span></div>
-                <div class="schedule-item"><span class="schedule-time">11:00 AM</span><span class="schedule-act">Healthy Dining Practices</span></div>
-                <div class="schedule-item"><span class="schedule-time">11:30 AM</span><span class="schedule-act">Guided Gymnastics Play</span></div>
-                <div class="schedule-item"><span class="schedule-time">12:15 PM</span><span class="schedule-act">Word Pronunciation Contest</span></div>
+                <div class="schedule-item"><span class="schedule-time">08:30 AM</span><span class="schedule-act">Morning Roll Call & News Sharing</span></div>
+                <div class="schedule-item"><span class="schedule-time">09:00 AM</span><span class="schedule-act">Grid Tracing (Letters/Numbers)</span></div>
+                <div class="schedule-item"><span class="schedule-time">09:40 AM</span><span class="schedule-act">Nature Tracking & Garden study</span></div>
+                <div class="schedule-item"><span class="schedule-time">10:30 AM</span><span class="schedule-act">Nutritional Food & Meal checks</span></div>
+                <div class="schedule-item"><span class="schedule-time">11:00 AM</span><span class="schedule-act">Organized Obstacle Course Play</span></div>
+                <div class="schedule-item"><span class="schedule-time">12:30 PM</span><span class="schedule-act">English Spelling block Games</span></div>
+                <div class="schedule-item"><span class="schedule-time">01:30 PM</span><span class="schedule-act">Biometric Gated Student Handover</span></div>
               </div>
             </div>
           </div>
@@ -747,21 +797,22 @@
               
               <h4>Expected Learning Outcomes</h4>
               <ul class="outcomes-list">
-                <li>Simple reading of 4-5 line storybooks and early environmental rules.</li>
-                <li>Perform visual subtraction and list numbers up to 100 correctly.</li>
-                <li>Lead classroom tasks, host circle discussions, and share.</li>
-                <li>Practice basic computer mouse skills and digital screen puzzles.</li>
+                <li>Fluent reading of short paragraph storybooks and basic dictionary use.</li>
+                <li>Understand basic subtractions and multi-digit identification up to 100.</li>
+                <li>Conduct safety tasks, public speaking, and team leadership drills.</li>
+                <li>Use basic computer mouse clicking, drawing, and screen actions.</li>
               </ul>
             </div>
             <div class="curr-panel-right">
               <h4>Typical Daily Routine</h4>
               <div class="schedule-list">
-                <div class="schedule-item"><span class="schedule-time">09:00 AM</span><span class="schedule-act">Show-and-Tell Speaking</span></div>
-                <div class="schedule-item"><span class="schedule-time">09:30 AM</span><span class="schedule-act">Paragraph Reading & Phonics</span></div>
-                <div class="schedule-item"><span class="schedule-time">10:30 AM</span><span class="schedule-act">Interactive Math Addition Grid</span></div>
-                <div class="schedule-item"><span class="schedule-time">11:15 AM</span><span class="schedule-act">Nutrition & Social Dining</span></div>
-                <div class="schedule-item"><span class="schedule-time">11:45 AM</span><span class="schedule-act">Science Experiment (Water cycle)</span></div>
-                <div class="schedule-item"><span class="schedule-time">12:30 PM</span><span class="schedule-act">Basic Coding & Computer Time</span></div>
+                <div class="schedule-item"><span class="schedule-time">08:30 AM</span><span class="schedule-act">Show-and-Tell Speech logs</span></div>
+                <div class="schedule-item"><span class="schedule-time">09:00 AM</span><span class="schedule-act">Sentence Book reading sessions</span></div>
+                <div class="schedule-item"><span class="schedule-time">09:40 AM</span><span class="schedule-act">Math Addition & Subtraction grids</span></div>
+                <div class="schedule-item"><span class="schedule-time">10:30 AM</span><span class="schedule-act">Group Dining & Manners practice</span></div>
+                <div class="schedule-item"><span class="schedule-time">11:00 AM</span><span class="schedule-act">Guided Science trials (Water cycle)</span></div>
+                <div class="schedule-item"><span class="schedule-time">12:30 PM</span><span class="schedule-act">Basic digital keyboard/Drawing blocks</span></div>
+                <div class="schedule-item"><span class="schedule-time">01:30 PM</span><span class="schedule-act">Gated security safe checkout</span></div>
               </div>
             </div>
           </div>
@@ -802,7 +853,7 @@
           <ul class="docs-list">
             <li>Original and photocopy of Child's Birth Certificate.</li>
             <li>Completed Immunization Chart (Pediatric record).</li>
-            <li>Proof of Residential Address (Utility bill, Rent contract).</li>
+            <li>Proof of Residential Address (Aadhaar card, Utility bill, Rent contract).</li>
             <li>3 passport-sized color photos of the Child.</li>
             <li>1 passport-sized photo of each parent/guardian.</li>
           </ul>
@@ -830,36 +881,36 @@
               <tbody>
                 <tr>
                   <td><strong>Playgroup</strong></td>
-                  <td>$200</td>
-                  <td>$850</td>
-                  <td>$150</td>
-                  <td>$80</td>
+                  <td>₹5,000</td>
+                  <td>₹18,500</td>
+                  <td>₹3,500</td>
+                  <td>₹1,500</td>
                 </tr>
                 <tr>
                   <td><strong>Nursery</strong></td>
-                  <td>$200</td>
-                  <td>$950</td>
-                  <td>$180</td>
-                  <td>$80</td>
+                  <td>₹5,000</td>
+                  <td>₹20,000</td>
+                  <td>₹4,000</td>
+                  <td>₹1,500</td>
                 </tr>
                 <tr>
                   <td><strong>Junior KG</strong></td>
-                  <td>$200</td>
-                  <td>$1,100</td>
-                  <td>$200</td>
-                  <td>$85</td>
+                  <td>₹5,000</td>
+                  <td>₹22,500</td>
+                  <td>₹4,500</td>
+                  <td>₹1,800</td>
                 </tr>
                 <tr>
                   <td><strong>Senior KG</strong></td>
-                  <td>$200</td>
-                  <td>$1,200</td>
-                  <td>$200</td>
-                  <td>$85</td>
+                  <td>₹5,000</td>
+                  <td>₹25,000</td>
+                  <td>₹4,500</td>
+                  <td>₹1,800</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p class="fee-note">* Transportation fees are computed separately based on location radius from the school (starting from $50/month).</p>
+          <p class="fee-note">* Transportation fees are computed separately based on location radius from Sector 15 school (starting from ₹1,200/month).</p>
         </div>
       </div>
     </section>
@@ -1025,7 +1076,7 @@
           <div class="principal-photo-wrapper">
             <div class="principal-photo">👩‍🏫</div>
             <div class="principal-details">
-              <h3>Mrs. Evelyn Carter</h3>
+              <h3>Mrs. Priya Sharma</h3>
               <span>Principal, M.Ed. Child Psychology</span>
             </div>
           </div>
@@ -1036,7 +1087,7 @@
             <p>Welcome to Kindergarten Preschool. As educators and parents ourselves, we recognize that the first six years represent the gold standard of child cognitive elasticity. Our campus is built to respect that individual speed of growth.</p>
             <p>Our syllabus does not emphasize passive copying. Instead, it utilizes custom logic blocks, interactive canvas colors, sandbox nature tracking, and empathetic playground rules. We collaborate closely with mothers and fathers to construct a transparent support bridge for every toddler.</p>
             <p>We invite you to schedule a tour and experience our loving learning space firsthand.</p>
-            <div class="principal-signature">Evelyn Carter</div>
+            <div class="principal-signature">Priya Sharma</div>
           </div>
         </div>
 
@@ -1081,7 +1132,7 @@
             <!-- Teacher 1 -->
             <div class="teacher-card sky">
               <div class="teacher-avatar-circle">👩‍🎨</div>
-              <h3>Ms. Sarah Jenkins</h3>
+              <h3>Ms. Anjali Mehta</h3>
               <span class="teacher-qual">B.FA in Creative Arts, Early Care Lead</span>
               <div class="teacher-meta-badges">
                 <span class="teacher-badge-node">8+ Yrs Exp</span>
@@ -1092,7 +1143,7 @@
             <!-- Teacher 2 -->
             <div class="teacher-card pink">
               <div class="teacher-avatar-circle">👨‍🏫</div>
-              <h3>Mr. David Miller</h3>
+              <h3>Mr. Rajesh Verma</h3>
               <span class="teacher-qual">B.Ed. in Primary Education, Phonics Coach</span>
               <div class="teacher-meta-badges">
                 <span class="teacher-badge-node">6+ Yrs Exp</span>
@@ -1103,7 +1154,7 @@
             <!-- Teacher 3 -->
             <div class="teacher-card green">
               <div class="teacher-avatar-circle">👩‍⚕️</div>
-              <h3>Ms. Rita Gomez</h3>
+              <h3>Ms. Rita Deshmukh</h3>
               <span class="teacher-qual">Certified Pediatric Nurse & Caretaker</span>
               <div class="teacher-meta-badges">
                 <span class="teacher-badge-node">10+ Yrs Exp</span>
@@ -1119,12 +1170,80 @@
   </main>
 
 
+  <!-- ==================== EVENTS & ACTIVITIES PAGE ==================== -->
+  <main id="events" class="page-route">
+    <section class="section-padding bg-wave-container">
+      <div class="container text-center">
+        <h2 class="section-title">Events & <span>Campus Activities</span></h2>
+        <p class="section-subtitle">We organize regular developmental activities, cultural festivals, and camps to build social confidence.</p>
+        
+        <div class="events-page-grid">
+          <!-- Event 1 -->
+          <div class="event-detail-card">
+            <div class="event-img-stub bg-sky">🎨</div>
+            <div class="event-info-box">
+              <span class="event-tag">Co-Curricular</span>
+              <h3>Annual Day Celebration</h3>
+              <p>A grand stage event where preschoolers perform in group plays, dance to kids rhymes, and wear colorful costumes to celebrate diversity.</p>
+            </div>
+          </div>
+          <!-- Event 2 -->
+          <div class="event-detail-card">
+            <div class="event-img-stub bg-pink">🏃</div>
+            <div class="event-info-box">
+              <span class="event-tag">Sports</span>
+              <h3>Preschool Sports Day</h3>
+              <p>Mini gymnastics, obstacle runs, balancing tests, and sensory ring tosses that reward every young child with gold star medals.</p>
+            </div>
+          </div>
+          <!-- Event 3 -->
+          <div class="event-detail-card">
+            <div class="event-img-stub bg-green">🔬</div>
+            <div class="event-info-box">
+              <span class="event-tag">STEM</span>
+              <h3>STEM Science & Sandbox Day</h3>
+              <p>Preschoolers run water wheel experiments, build block gears, track plant sprouts, and study colors mixing on smartboards.</p>
+            </div>
+          </div>
+          <!-- Event 4 -->
+          <div class="event-detail-card">
+            <div class="event-img-stub bg-yellow">🏵️</div>
+            <div class="event-info-box">
+              <span class="event-tag">Cultural</span>
+              <h3>Festival & Costume Celebrations</h3>
+              <p>Gatherings introducing seasonal festivals, national days, clay crafts, and organic color drawings to foster cultural respect.</p>
+            </div>
+          </div>
+          <!-- Event 5 -->
+          <div class="event-detail-card">
+            <div class="event-img-stub bg-purple">🧸</div>
+            <div class="event-info-box">
+              <span class="event-tag">Summer camp</span>
+              <h3>Annual Creative Summer Camp</h3>
+              <p>Special 6-week summer camp focusing on pottery wheels, music beats, kids yoga, spelling games, and hand puppets play.</p>
+            </div>
+          </div>
+          <!-- Event 6 -->
+          <div class="event-detail-card">
+            <div class="event-img-stub bg-orange">🎪</div>
+            <div class="event-info-box">
+              <span class="event-tag">Daycare</span>
+              <h3>Extended After-School Care</h3>
+              <p>Daily daycare classes hosting sensory play, nutritional snacks, rest breaks, and early motor activities for toddlers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
   <!-- ==================== LOCATE US PAGE ==================== -->
   <main id="locate-us" class="page-route">
     <section class="section-padding bg-wave-container">
       <div class="container">
         <div class="text-center">
-          <h2 class="section-title">Visit Our <span>Campus</span></h2>
+          <h2 class="section-title">Visit Our <span>Gurgaon Campus</span></h2>
           <p class="section-subtitle">Reach out to us or drop by for a tour. Find interactive maps, directions, and direct contacts.</p>
         </div>
 
@@ -1136,21 +1255,21 @@
             <div class="info-card-unit">
               <div class="info-card-icon"><i class="fa-solid fa-map-location-dot"></i></div>
               <h4>School Address</h4>
-              <p>123 Blossom Lane, Sunshine Heights, Creative District, NY 10001</p>
+              <p>Plot No. 45, Blossom Lane, Sector 15, Gurgaon, Haryana 122001</p>
             </div>
             
             <!-- Contact card -->
             <div class="info-card-unit">
               <div class="info-card-icon"><i class="fa-solid fa-phone"></i></div>
               <h4>Call & Email</h4>
-              <p>+1 (555) 123-4567<br>+1 (555) 987-6543<br>hello@kindergarten.edu</p>
+              <p>+91 98765 43210<br>+91 124 4567890<br>hello@kindergarten.edu</p>
             </div>
             
             <!-- Dynamic Timings card -->
             <div class="info-card-unit open-status">
               <div class="info-card-icon"><i class="fa-solid fa-clock"></i></div>
-              <h4>Working Hours</h4>
-              <p>Monday - Friday: 08:00 AM - 03:00 PM<br>Saturday - Sunday: Closed</p>
+              <h4>School Timings</h4>
+              <p>Monday - Friday: 08:30 AM - 01:30 PM<br>Saturday - Sunday: Closed</p>
               <div id="timing-tag" class="timing-status-tag">Checking status...</div>
             </div>
           </div>
@@ -1187,17 +1306,79 @@
         <div class="transport-info-grid">
           <div class="transport-card">
             <h4><i class="fa-solid fa-bus"></i> School Bus Transport</h4>
-            <p>We operate 5 safety-vetted shuttle routes with GPS tracking and female support caretakers. Pinned routes cover the entire creative district and sunshine heights neighborhoods. Daily drop-off and pick-up are timed dynamically with school entry gates.</p>
+            <p>We operate 5 safety-vetted shuttle routes with GPS tracking and female support caretakers. Pinned routes cover Sector 15, Sector 45, Sector 56, DLF Phase 3, and neighboring residential areas. Daily drop-off and pick-up are timed dynamically with school entry gates.</p>
           </div>
           <div class="transport-card">
             <h4><i class="fa-solid fa-square-parking"></i> Drop-off Directions</h4>
-            <p>Parents dropped by vehicles are requested to enter via Blossom Lane Gate B for active child handover. Dedicated lanes are marked to avoid local traffic bottlenecks. Security officers are stationed to assist preschoolers during morning rush hours (07:45 - 08:15 AM).</p>
+            <p>Parents dropped by vehicles are requested to enter via Gate B for active child handover. Dedicated lanes are marked to avoid local traffic bottlenecks. Security officers are stationed to assist preschoolers during morning hours (08:15 - 08:45 AM).</p>
           </div>
         </div>
 
       </div>
     </section>
   </main>
+
+
+  <!-- ==================== BOOK A TOUR POPUP MODAL ==================== -->
+  <div class="tour-modal" id="book-tour-popup">
+    <div class="tour-modal-content" style="max-width: 550px; padding: 32px;">
+      <button class="tour-modal-close" id="book-tour-close"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div id="book-tour-form-block">
+        <h3 style="font-size: 1.6rem; color: var(--color-pink-dark); margin-bottom: 12px; font-family: var(--font-title);"><i class="fa-solid fa-calendar-check"></i> Book a School Tour</h3>
+        <p style="color: var(--color-text-light); font-size: 0.92rem; margin-bottom: 24px;">Select your preferred slots to experience our smart classrooms and meet educators.</p>
+        
+        <form id="book-tour-form">
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label for="tour-parent-name" style="font-weight: 600; font-size: 0.9rem;">Parent Full Name <span>*</span></label>
+            <input type="text" id="tour-parent-name" class="form-control" placeholder="Enter your name" required>
+          </div>
+          
+          <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
+            <div class="form-group">
+              <label for="tour-parent-phone" style="font-weight: 600; font-size: 0.9rem;">Phone Number <span>*</span></label>
+              <input type="tel" id="tour-parent-phone" class="form-control" placeholder="Enter 10-digit number" required>
+            </div>
+            <div class="form-group">
+              <label for="tour-child-age" style="font-weight: 600; font-size: 0.9rem;">Child Age <span>*</span></label>
+              <input type="number" step="0.1" id="tour-child-age" class="form-control" placeholder="e.g. 3.2" required>
+            </div>
+          </div>
+
+          <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px;">
+            <div class="form-group">
+              <label for="tour-date" style="font-weight: 600; font-size: 0.9rem;">Preferred Date <span>*</span></label>
+              <input type="date" id="tour-date" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="tour-time" style="font-weight: 600; font-size: 0.9rem;">Preferred Time <span>*</span></label>
+              <select id="tour-time" class="form-control" required>
+                <option value="" disabled selected>Select slot</option>
+                <option value="morning">09:00 AM - 10:30 AM</option>
+                <option value="noon">11:30 AM - 01:00 PM</option>
+                <option value="afternoon">02:00 PM - 03:30 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 14px;">Schedule Campus Tour <i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+      </div>
+
+      <!-- Success Booking block -->
+      <div id="book-tour-success-block" style="display: none; text-align: center; padding: 20px 0;">
+        <div class="success-icon-box" style="background-color: var(--color-green); color: var(--color-green-dark);"><i class="fa-solid fa-calendar-check"></i></div>
+        <h3 style="color: var(--color-green-dark); font-size: 1.6rem; margin-bottom: 8px;">Tour Scheduled!</h3>
+        <p style="color: var(--color-text-light); font-size: 0.95rem; margin-bottom: 20px;">Your visit slot is locked. An confirmation template details message has been sent to <strong id="tour-success-phone">your phone</strong>.</p>
+        <div style="background: #f8fafc; border: 1px dashed var(--color-border); padding: 12px 16px; border-radius: 8px; font-size: 0.85rem; color: var(--color-text-light); text-align: left; font-family: monospace; margin-bottom: 24px;">
+          [CONFIRMATION TEMPLATE]<br>
+          Dear Parent, your school tour visit at Kindergarten Gurgaon is confirmed for <span id="tour-success-date">date</span>. Pinned coordinates: Sector 15 campus.
+        </div>
+        <button type="button" class="btn-secondary" id="btn-close-tour-success">Close Window</button>
+      </div>
+
+    </div>
+  </div>
 
 
   <!-- ==================== FOOTER ==================== -->
@@ -1211,7 +1392,7 @@
           <div class="logo-icon">K</div>
           <span class="logo-text">Kindergarten</span>
         </a>
-        <p class="footer-desc">A colorful, premium childhood education center dedicated to early development through sensory games, phonics, safety guidelines, and active peer play.</p>
+        <p class="footer-desc">Gurgaon's premier childhood education center dedicated to early development through sensory games, phonics, biometric safety, and active peer play.</p>
         <div class="footer-socials">
           <a href="#" class="social-icon-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1228,7 +1409,8 @@
           <li><a href="#home#programs-section">Class Programs</a></li>
           <li><a href="#home#gallery-section">Photo Gallery</a></li>
           <li><a href="#admissions">Admissions Info</a></li>
-          <li><a href="#educators">Educators & staff</a></li>
+          <li><a href="#educators">Educators & Staff</a></li>
+          <li><a href="#events">Campus Events</a></li>
           <li><a href="#locate-us">Campus Map</a></li>
         </ul>
       </div>
@@ -1250,11 +1432,11 @@
         <ul class="footer-contact-info">
           <li>
             <i class="fa-solid fa-location-dot footer-contact-icon"></i>
-            <span>123 Blossom Lane, Sunshine Heights, Creative District, NY 10001</span>
+            <span>Plot No. 45, Blossom Lane, Sector 15, Gurgaon, Haryana 122001</span>
           </li>
           <li>
             <i class="fa-solid fa-phone footer-contact-icon"></i>
-            <span>+1 (555) 123-4567<br>+1 (555) 987-6543</span>
+            <span>+91 98765 43210<br>+91 124 4567890</span>
           </li>
           <li>
             <i class="fa-solid fa-envelope footer-contact-icon"></i>
@@ -1276,6 +1458,6 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   
   <!-- Custom scripts -->
-  <script src="app.js?v=2"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>
