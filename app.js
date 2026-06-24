@@ -1,5 +1,5 @@
 /* ==========================================
-   KINDERGARTEN CLIENT APP JS
+   KINDERGARTEN CLIENT APP JS - REDESIGNED
    ========================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initLocateUsMap();
   initHeaderScrollEffect();
   initQuickContactForm();
+  initFaqAccordion();
+  initVirtualTourModal();
 });
 
 /* --- Toast Notification Helper --- */
@@ -31,7 +33,7 @@ function showToast(message, type = 'success') {
    1. Client-side Routing & Navigation
    ========================================== */
 function initRouter() {
-  const pages = ['home', 'admissions', 'locate-us'];
+  const pages = ['home', 'admissions', 'locate-us', 'educators'];
   
   function handleRoute() {
     let hash = window.location.hash || '#home';
@@ -411,7 +413,7 @@ function initEnrollmentWizard() {
     }
     
     if (currentStep === totalSteps) {
-      btnNext.innerHTML = 'Submit Inquiry <i class="fa-solid fa-check"></i>';
+      btnNext.innerHTML = 'Submit Application <i class="fa-solid fa-check"></i>';
     } else {
       btnNext.innerHTML = 'Next <i class="fa-solid fa-arrow-right"></i>';
     }
@@ -514,7 +516,7 @@ function initEnrollmentWizard() {
     
     // Run Confetti explosion!
     triggerConfetti();
-    showToast('Admission inquiry submitted successfully!', 'success');
+    showToast('Admissions application submitted successfully!', 'success');
   }
 
   // Reset form functionality
@@ -602,39 +604,35 @@ function initLocateUsMap() {
   if (!mapContainer) return;
   
   // Coordinates for our playschool (Sunshine Heights district)
-  // Let's position it in a pleasant neighborhood in Brooklyn Heights, NYC.
   const lat = 40.6974;
   const lng = -73.9933;
   
   // Create map
   const map = L.map('map', {
-    scrollWheelZoom: false // disable zoom scroll to avoid hijacking page scroll
+    scrollWheelZoom: false
   }).setView([lat, lng], 15);
   
-  // Save global reference so we can call invalidateSize() on nav display changes
   window.kindergartenMap = map;
   
-  // Add pastel map tiles: CartoDB Positron
+  // Add CartoDB Positron tiles
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
     subdomains: 'abcd',
     maxZoom: 20
   }).addTo(map);
   
-  // Custom styled icon popup using standard Leaflet markers or HTML div icons
   const marker = L.marker([lat, lng]).addTo(map);
   
   marker.bindPopup(`
     <div style="text-align: center;">
-      <h4 style="margin: 0 0 4px 0; color: #db2777; font-family: 'Fredoka', sans-serif;">Kindergarten Playschool</h4>
-      <p style="margin: 0; font-size: 13px; font-weight: 500;">123 Blossom Lane, Creative District</p>
-      <a href="#admissions#enrollment-section" style="display:inline-block; margin-top:8px; background:#0284c7; color:white; padding:4px 10px; border-radius:50px; text-decoration:none; font-size:11px; font-weight:600;">Visit Us Today!</a>
+      <h4 style="margin: 0 0 4px 0; color: #db2777; font-family: 'Fredoka', sans-serif;">Kindergarten Preschool</h4>
+      <p style="margin: 0; font-size: 13px; font-weight: 500;">123 Blossom Lane, Sunshine Heights</p>
+      <a href="#admissions#enrollment-section" style="display:inline-block; margin-top:8px; background:#0284c7; color:white; padding:4px 10px; border-radius:50px; text-decoration:none; font-size:11px; font-weight:600;">Apply Online</a>
     </div>
   `).openPopup();
 
-  // Initialize and check opening timings
   updateOpeningStatus();
-  setInterval(updateOpeningStatus, 60000); // refresh every minute
+  setInterval(updateOpeningStatus, 60000);
 }
 
 function updateOpeningStatus() {
@@ -642,18 +640,17 @@ function updateOpeningStatus() {
   if (!statusTag) return;
   
   const now = new Date();
-  const day = now.getDay(); // 0 is Sun, 6 is Sat
+  const day = now.getDay();
   const hour = now.getHours();
   
-  // Timing hours: Mon - Fri (8:00 AM to 3:00 PM)
   if (day === 0 || day === 6) {
     statusTag.textContent = 'Closed (Weekend)';
     statusTag.className = 'timing-status-tag closed';
   } else if (hour < 8 || hour >= 15) {
-    statusTag.textContent = 'Closed Now (School hours: 8 AM - 3 PM)';
+    statusTag.textContent = 'Closed Now (Hours: 8 AM - 3 PM)';
     statusTag.className = 'timing-status-tag closed';
   } else {
-    statusTag.textContent = 'Open Now (School hours: 8 AM - 3 PM)';
+    statusTag.textContent = 'Open Now (Hours: 8 AM - 3 PM)';
     statusTag.className = 'timing-status-tag open';
   }
 }
@@ -669,13 +666,72 @@ function initQuickContactForm() {
     e.preventDefault();
     
     const name = document.getElementById('contact-name').value;
-    const email = document.getElementById('contact-email').value;
-    const message = document.getElementById('contact-message').value;
     
     // Simulate API request
     setTimeout(() => {
       form.reset();
-      showToast(`Thank you, <strong>${name}</strong>! Your inquiry message has been sent successfully.`, 'success');
+      showToast(`Thank you, <strong>${name}</strong>! Your campus tour booking request has been sent successfully.`, 'success');
     }, 600);
+  });
+}
+
+/* ==========================================
+   10. Parent FAQs Accordion
+   ========================================== */
+function initFaqAccordion() {
+  const faqHeaders = document.querySelectorAll('.faq-header');
+  
+  faqHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.parentElement;
+      const body = item.querySelector('.faq-body');
+      const isOpen = item.classList.contains('open');
+      
+      // Close other open FAQ items for a clean toggle accordion feel
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        if (openItem !== item) {
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-body').style.maxHeight = '0px';
+        }
+      });
+      
+      if (isOpen) {
+        item.classList.remove('open');
+        body.style.maxHeight = '0px';
+      } else {
+        item.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
+  });
+}
+
+/* ==========================================
+   11. Virtual School Tour Modal Setup
+   ========================================== */
+function initVirtualTourModal() {
+  const modal = document.getElementById('tour-modal');
+  const openBtn = document.getElementById('btn-open-tour');
+  const mediaTrigger = document.getElementById('media-tour-trigger');
+  const closeBtn = document.getElementById('tour-modal-close');
+  
+  if (!modal || !closeBtn) return;
+  
+  function openModal() {
+    modal.classList.add('active');
+  }
+  
+  function closeModal() {
+    modal.classList.remove('active');
+  }
+  
+  if (openBtn) openBtn.addEventListener('click', openModal);
+  if (mediaTrigger) mediaTrigger.addEventListener('click', openModal);
+  
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
   });
 }
