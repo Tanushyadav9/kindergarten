@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 
@@ -208,7 +208,7 @@
     <section id="programs-section" class="programs-section section-padding" style="background-color: var(--color-cream);">
       <div class="container text-center">
         <h2 class="section-title">Nurturing <span>Academic Programs</span></h2>
-        <p class="section-subtitle">Specially structured syllabus blocks designed around age-appropriate motor and cognitive stages.</p>
+        <p class="section-subtitle">A curriculum tailored to early age brackets, helping them build literacy, coordination, and independence.</p>
         
         <div class="programs-overview-grid">
           <!-- Playgroup -->
@@ -362,7 +362,7 @@
             <button class="btn-primary" id="btn-open-tour" style="background: linear-gradient(135deg, var(--color-yellow-main), var(--color-yellow-dark)); color: var(--color-yellow-dark); box-shadow: 0 8px 20px rgba(250, 204, 21, 0.25);">Launch Virtual Tour <i class="fa-solid fa-play"></i></button>
           </div>
           <div class="virtual-tour-media" id="media-tour-trigger">
-            <img src="assets/hero_kids.png" alt="Preschool lobby and learning desk preview">
+            <img src="assets/tour_indoor.png" alt="Preschool library facility preview">
             <div class="virtual-tour-overlay">
               <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
             </div>
@@ -371,16 +371,48 @@
       </div>
     </section>
 
-    <!-- Virtual Tour Modal -->
+    <!-- Virtual Tour Modal (Functional Carousel Slideshow) -->
     <div class="tour-modal" id="tour-modal">
-      <div class="tour-modal-content">
-        <button class="tour-modal-close" id="tour-modal-close"><i class="fa-solid fa-xmark"></i></button>
-        <div class="tour-video-wrapper">
-          <div class="tour-mockup-slide">
-            <div style="font-size: 5rem; margin-bottom: 20px;">🏫</div>
-            <h3>Kindergarten Campus Virtual Tour</h3>
-            <p>A video simulation showing our building blocks, sandpit play zones, child-friendly library shelves, and the sanitization checks at Blossom Lane entry.</p>
-            <div style="margin-top: 20px; font-weight: bold; background: var(--color-pink-dark); padding: 8px 20px; border-radius: 50px;">Play simulation running...</div>
+      <div class="tour-modal-content" style="max-width: 750px;">
+        <button class="tour-modal-close" id="tour-modal-close" aria-label="Close Tour"><i class="fa-solid fa-xmark"></i></button>
+        
+        <div class="tour-slideshow-container">
+          <!-- Slide 1: Smart Classroom -->
+          <div class="tour-slide active">
+            <img src="assets/tour_indoor.png" alt="Smart Classroom & Library Corner">
+            <div class="tour-slide-caption">
+              <h3>1. Smart Classroom & Library Corner</h3>
+              <p>Equipped with digital touch screens, audio playbooks, child-sized low bookshelves, and ergonomic seating.</p>
+            </div>
+          </div>
+          
+          <!-- Slide 2: Outdoor Playground -->
+          <div class="tour-slide">
+            <img src="assets/gallery_play.png" alt="Outdoor Safety Turf Playground">
+            <div class="tour-slide-caption">
+              <h3>2. Outdoor Safe Turf Playground</h3>
+              <p>A specialized soft rubber turf containing safety slides, swings, balancing logs, and biometric gated surrounds.</p>
+            </div>
+          </div>
+          
+          <!-- Slide 3: STEM Laboratory Sandbox -->
+          <div class="tour-slide">
+            <img src="assets/gallery_science.png" alt="STEM Laboratory Sandbox">
+            <div class="tour-slide-caption">
+              <h3>3. STEM Sandbox & Activity Room</h3>
+              <p>Visual testing tables, spelling block sets, seed potting jars, and clay modeling easels to support sensory growth.</p>
+            </div>
+          </div>
+          
+          <!-- Slider Controls -->
+          <button class="tour-slide-btn prev" id="tour-prev" aria-label="Previous Facility"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="tour-slide-btn next" id="tour-next" aria-label="Next Facility"><i class="fa-solid fa-chevron-right"></i></button>
+          
+          <!-- Dots indicators -->
+          <div class="tour-slide-dots" id="tour-dots">
+            <span class="tour-slide-dot active" data-index="0"></span>
+            <span class="tour-slide-dot" data-index="1"></span>
+            <span class="tour-slide-dot" data-index="2"></span>
           </div>
         </div>
       </div>
@@ -453,7 +485,7 @@
       </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- School Gallery Section (Actual Photos Embedded) -->
     <section id="gallery-section" class="gallery-section section-padding" style="background-color: var(--color-cream);">
       <div class="container text-center">
         <h2 class="section-title">Life at <span>Kindergarten</span></h2>
@@ -461,65 +493,65 @@
         
         <div class="gallery-grid">
           <!-- Item 1 -->
-          <div class="gallery-item" data-caption="Arts & Crafts Fun">
+          <div class="gallery-item" data-caption="Arts & Crafts Fun" data-image="assets/gallery_arts.png">
             <div class="gallery-placeholder">
-              <span class="gallery-placeholder-icon">🎨</span>
+              <img src="assets/gallery_arts.png" alt="Preschool children painting with watercolors">
               <span class="gallery-caption">Arts & Crafts</span>
             </div>
             <div class="gallery-item-overlay"><i class="fa-solid fa-plus"></i></div>
           </div>
           <!-- Item 2 -->
-          <div class="gallery-item" data-caption="Outdoor Playground Adventure">
+          <div class="gallery-item" data-caption="Outdoor Playground Adventure" data-image="assets/gallery_play.png">
             <div class="gallery-placeholder">
-              <span class="gallery-placeholder-icon">🛝</span>
+              <img src="assets/gallery_play.png" alt="Toddlers playing safely on slide turf playground">
               <span class="gallery-caption">Outdoor Play</span>
             </div>
             <div class="gallery-item-overlay"><i class="fa-solid fa-plus"></i></div>
           </div>
           <!-- Item 3 -->
-          <div class="gallery-item" data-caption="Interactive Science Sandbox">
+          <div class="gallery-item" data-caption="Interactive Science Sandbox" data-image="assets/gallery_science.png">
             <div class="gallery-placeholder">
-              <span class="gallery-placeholder-icon">🧪</span>
-              <span class="gallery-caption">Science Fun</span>
+              <img src="assets/gallery_science.png" alt="Kids checking liquid test tubes in science corner">
+              <span class="gallery-caption">Science Sandbox</span>
             </div>
             <div class="gallery-item-overlay"><i class="fa-solid fa-plus"></i></div>
           </div>
           <!-- Item 4 -->
-          <div class="gallery-item" data-caption="Storytelling & Reading Hours">
+          <div class="gallery-item" data-caption="Storytelling & Reading Hours" data-image="assets/tour_indoor.png">
             <div class="gallery-placeholder">
-              <span class="gallery-placeholder-icon">📚</span>
-              <span class="gallery-caption">Story Time</span>
+              <img src="assets/tour_indoor.png" alt="Smiling teacher reading open book to kids">
+              <span class="gallery-caption">Story Reading</span>
             </div>
             <div class="gallery-item-overlay"><i class="fa-solid fa-plus"></i></div>
           </div>
           <!-- Item 5 -->
-          <div class="gallery-item" data-caption="Music & Early Dance Session">
+          <div class="gallery-item" data-caption="Music & Early Dance Session" data-image="assets/gallery_stage.png">
             <div class="gallery-placeholder">
-              <span class="gallery-placeholder-icon">🎵</span>
-              <span class="gallery-caption">Music & Dance</span>
+              <img src="assets/gallery_stage.png" alt="Children playing xylophones and tambourines in dance class">
+              <span class="gallery-caption">Music & Rhythms</span>
             </div>
             <div class="gallery-item-overlay"><i class="fa-solid fa-plus"></i></div>
           </div>
           <!-- Item 6 -->
-          <div class="gallery-item" data-caption="Organic Clay Modeling">
+          <div class="gallery-item" data-caption="Organic Clay Modeling" data-image="assets/gallery_arts.png">
             <div class="gallery-placeholder">
-              <span class="gallery-placeholder-icon">🧱</span>
+              <img src="assets/gallery_arts.png" alt="Preschoolers shaping clay molds at wooden tables">
               <span class="gallery-caption">Clay Modeling</span>
             </div>
             <div class="gallery-item-overlay"><i class="fa-solid fa-plus"></i></div>
           </div>
           <!-- Item 7 -->
-          <div class="gallery-item" data-caption="Nutritional Group Lunch">
+          <div class="gallery-item" data-caption="Nutritional Group Lunch" data-image="assets/tour_indoor.png">
             <div class="gallery-placeholder">
-              <span class="gallery-placeholder-icon">🍎</span>
+              <img src="assets/tour_indoor.png" alt="Preschoolers eating pediatrician snacks at dining yards">
               <span class="gallery-caption">Healthy Dining</span>
             </div>
             <div class="gallery-item-overlay"><i class="fa-solid fa-plus"></i></div>
           </div>
           <!-- Item 8 -->
-          <div class="gallery-item" data-caption="Annual Costume Celebration">
+          <div class="gallery-item" data-caption="Annual Costume Celebration" data-image="assets/gallery_stage.png">
             <div class="gallery-placeholder">
-              <span class="gallery-placeholder-icon">🎭</span>
+              <img src="assets/gallery_stage.png" alt="Preschoolers in animal costume performing stage play">
               <span class="gallery-caption">Annual Festival</span>
             </div>
             <div class="gallery-item-overlay"><i class="fa-solid fa-plus"></i></div>
@@ -532,7 +564,9 @@
     <div id="gallery-lightbox" class="lightbox">
       <div class="lightbox-content">
         <button class="lightbox-close" id="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
-        <div class="lightbox-img-wrapper" id="lightbox-emoji">🎨</div>
+        <div class="lightbox-img-wrapper" id="lightbox-image-box">
+          <img src="" alt="Active lightbox view" id="lightbox-active-img" style="max-width: 100%; max-height: 70vh; border-radius: 8px; display: block;">
+        </div>
         <div class="lightbox-caption" id="lightbox-caption">Caption text here</div>
       </div>
     </div>
@@ -797,10 +831,10 @@
               
               <h4>Expected Learning Outcomes</h4>
               <ul class="outcomes-list">
-                <li>Fluent reading of short paragraph storybooks and basic dictionary use.</li>
-                <li>Understand basic subtractions and multi-digit identification up to 100.</li>
-                <li>Conduct safety tasks, public speaking, and team leadership drills.</li>
-                <li>Use basic computer mouse clicking, drawing, and screen actions.</li>
+                <li>Simple reading of 4-5 line storybooks and early environmental rules.</li>
+                <li>Perform visual subtraction and list numbers up to 100 correctly.</li>
+                <li>Lead classroom tasks, host circle discussions, and share.</li>
+                <li>Practice basic computer mouse skills and digital screen puzzles.</li>
               </ul>
             </div>
             <div class="curr-panel-right">
@@ -1180,7 +1214,7 @@
         <div class="events-page-grid">
           <!-- Event 1 -->
           <div class="event-detail-card">
-            <div class="event-img-stub bg-sky">🎨</div>
+            <div class="event-img-stub"><img src="assets/gallery_stage.png" alt="Preschoolers performing on Annual stage"></div>
             <div class="event-info-box">
               <span class="event-tag">Co-Curricular</span>
               <h3>Annual Day Celebration</h3>
@@ -1189,7 +1223,7 @@
           </div>
           <!-- Event 2 -->
           <div class="event-detail-card">
-            <div class="event-img-stub bg-pink">🏃</div>
+            <div class="event-img-stub"><img src="assets/gallery_sports.png" alt="Preschool kids running race"></div>
             <div class="event-info-box">
               <span class="event-tag">Sports</span>
               <h3>Preschool Sports Day</h3>
@@ -1198,7 +1232,7 @@
           </div>
           <!-- Event 3 -->
           <div class="event-detail-card">
-            <div class="event-img-stub bg-green">🔬</div>
+            <div class="event-img-stub"><img src="assets/gallery_science.png" alt="Preschool science classroom experiments"></div>
             <div class="event-info-box">
               <span class="event-tag">STEM</span>
               <h3>STEM Science & Sandbox Day</h3>
@@ -1207,7 +1241,7 @@
           </div>
           <!-- Event 4 -->
           <div class="event-detail-card">
-            <div class="event-img-stub bg-yellow">🏵️</div>
+            <div class="event-img-stub"><img src="assets/gallery_arts.png" alt="Toddlers painting festival colors"></div>
             <div class="event-info-box">
               <span class="event-tag">Cultural</span>
               <h3>Festival & Costume Celebrations</h3>
@@ -1216,7 +1250,7 @@
           </div>
           <!-- Event 5 -->
           <div class="event-detail-card">
-            <div class="event-img-stub bg-purple">🧸</div>
+            <div class="event-img-stub"><img src="assets/gallery_arts.png" alt="Kids crafting in summer camps"></div>
             <div class="event-info-box">
               <span class="event-tag">Summer camp</span>
               <h3>Annual Creative Summer Camp</h3>
@@ -1225,7 +1259,7 @@
           </div>
           <!-- Event 6 -->
           <div class="event-detail-card">
-            <div class="event-img-stub bg-orange">🎪</div>
+            <div class="event-img-stub"><img src="assets/tour_indoor.png" alt="Daycare activity room spaces"></div>
             <div class="event-info-box">
               <span class="event-tag">Daycare</span>
               <h3>Extended After-School Care</h3>
@@ -1458,6 +1492,6 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   
   <!-- Custom scripts -->
-  <script src="app.js?v=3"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>

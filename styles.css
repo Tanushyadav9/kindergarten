@@ -1032,38 +1032,133 @@ header.scrolled {
   background-color: var(--color-pink-dark);
 }
 
-.tour-video-wrapper {
-  aspect-ratio: 16/9;
-  background: #000;
+/* --- Virtual Tour Slideshow Styles --- */
+.tour-slideshow-container {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #0f172a;
 }
 
-.tour-mockup-slide {
+.tour-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.tour-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.tour-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tour-slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.7) 60%, transparent 100%);
+  color: white;
+  padding: 30px 40px 45px 40px;
+  z-index: 5;
+  text-align: left;
+}
+
+.tour-slide-caption h3 {
+  font-family: var(--font-title);
+  color: var(--color-yellow-main);
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tour-slide-caption p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  opacity: 0.9;
+  line-height: 1.5;
+  max-width: 600px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Slide Navigation Buttons */
+.tour-slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  color: white;
-  text-align: center;
-  padding: 40px;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition-bounce);
+  font-size: 1.2rem;
 }
 
-.tour-mockup-slide h3 {
-  color: white;
-  font-size: 1.8rem;
-  margin-top: 16px;
-  margin-bottom: 8px;
+.tour-slide-btn:hover {
+  background: white;
+  color: var(--color-pink-dark);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-.tour-mockup-slide p {
-  font-size: 1rem;
-  opacity: 0.8;
-  max-width: 500px;
+.tour-slide-btn.prev {
+  left: 20px;
+}
+
+.tour-slide-btn.next {
+  right: 20px;
+}
+
+/* Dots Indicators */
+.tour-slide-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.tour-slide-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.tour-slide-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.tour-slide-dot.active {
+  background: var(--color-pink-main);
+  transform: scale(1.2);
 }
 
 /* Educators Grid & Principal Message */

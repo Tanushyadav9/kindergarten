@@ -242,22 +242,18 @@ function initGalleryLightbox() {
   const lightbox = document.getElementById('gallery-lightbox');
   const items = document.querySelectorAll('.gallery-item');
   const closeBtn = document.getElementById('lightbox-close');
-  const lightboxEmoji = document.getElementById('lightbox-emoji');
+  const activeImg = document.getElementById('lightbox-active-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
   
   if (!lightbox || !closeBtn) return;
   
   items.forEach(item => {
     item.addEventListener('click', () => {
-      const emoji = item.querySelector('.gallery-placeholder-icon').textContent;
       const caption = item.getAttribute('data-caption');
+      const imageSrc = item.getAttribute('data-image');
       
-      lightboxEmoji.textContent = emoji;
-      lightboxCaption.textContent = caption;
-      
-      // Select visual style matching the item
-      const color = window.getComputedStyle(item.querySelector('.gallery-placeholder')).backgroundColor;
-      lightboxEmoji.parentElement.style.backgroundColor = color;
+      if (activeImg) activeImg.src = imageSrc;
+      if (lightboxCaption) lightboxCaption.textContent = caption;
       
       lightbox.classList.add('active');
     });
@@ -265,6 +261,7 @@ function initGalleryLightbox() {
   
   function closeLightbox() {
     lightbox.classList.remove('active');
+    if (activeImg) activeImg.src = ''; // Clear image src when closed
   }
   
   closeBtn.addEventListener('click', closeLightbox);
@@ -719,8 +716,60 @@ function initVirtualTourModal() {
   
   if (!modal || !closeBtn) return;
   
+  const slides = Array.from(modal.querySelectorAll('.tour-slide'));
+  const dots = Array.from(modal.querySelectorAll('.tour-slide-dot'));
+  const prevBtn = document.getElementById('tour-prev');
+  const nextBtn = document.getElementById('tour-next');
+  
+  let currentSlideIndex = 0;
+  
+  function showSlide(index) {
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+    
+    currentSlideIndex = index;
+    
+    slides.forEach((slide, idx) => {
+      if (idx === currentSlideIndex) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+    
+    dots.forEach((dot, idx) => {
+      if (idx === currentSlideIndex) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  }
+  
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showSlide(currentSlideIndex - 1);
+    });
+  }
+  
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showSlide(currentSlideIndex + 1);
+    });
+  }
+  
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showSlide(index);
+    });
+  });
+  
   function openModal() {
     modal.classList.add('active');
+    showSlide(0); // Reset to first slide
   }
   
   function closeModal() {
