@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initVirtualTourModal();
   initBookTourPopup();
+  initCallbackForm();
+  initNewsletterForm();
 });
 
 /* --- Toast Notification Helper --- */
@@ -836,5 +838,50 @@ function initBookTourPopup() {
     successBlock.style.display = 'block';
     
     showToast('Campus tour scheduled successfully!', 'success');
+  });
+}
+
+/* ==========================================
+   13. Schedule a Callback Form Handler
+   ========================================== */
+function initCallbackForm() {
+  const form = document.getElementById('callback-form');
+  if (!form) return;
+  
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const parentName = document.getElementById('callback-parent-name').value;
+    const phone = document.getElementById('callback-phone').value;
+    const time = document.getElementById('callback-time').value;
+    
+    // Simple 10 digit verification
+    const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
+    if (!/^\d{10}$/.test(cleanPhone)) {
+      showToast('Please enter a valid 10-digit mobile number.', 'error');
+      return;
+    }
+    
+    setTimeout(() => {
+      form.reset();
+      showToast(`Thank you, <strong>${parentName}</strong>! Our Gurgaon coordinator will call you back at <strong>${phone}</strong> during the ${time} slot.`, 'success');
+    }, 600);
+  });
+}
+
+/* ==========================================
+   14. Newsletter Form Handler
+   ========================================== */
+function initNewsletterForm() {
+  const form = document.getElementById('newsletter-form');
+  if (!form) return;
+  
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('newsletter-email').value;
+    
+    setTimeout(() => {
+      form.reset();
+      showToast(`Thank you! <strong>${email}</strong> has been subscribed to our admissions newsletter.`, 'success');
+    }, 500);
   });
 }

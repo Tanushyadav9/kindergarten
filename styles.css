@@ -6,38 +6,47 @@
   --font-title: 'Fredoka', sans-serif;
   --font-body: 'Quicksand', sans-serif;
 
-  /* Colors - Pastels with high-contrast text pairings */
-  --color-sky: #e0f2fe;
-  --color-sky-dark: #0284c7;
-  --color-sky-main: #38bdf8;
-  
-  --color-pink: #fce7f3;
-  --color-pink-dark: #db2777;
-  --color-pink-main: #f472b6;
-  
-  --color-green: #dcfce7;
-  --color-green-dark: #16a34a;
-  --color-green-main: #4ade80;
-  
-  --color-yellow: #fef9c3;
-  --color-yellow-dark: #b45309;
-  --color-yellow-main: #facc15;
-  
-  --color-purple: #f3e8ff;
-  --color-purple-dark: #7e22ce;
-  --color-purple-main: #c084fc;
-
-  --color-orange: #ffedd5;
-  --color-orange-dark: #c2410c;
-  --color-orange-main: #fb923c;
-
-  /* Neutrals */
-  --color-bg: #f8fafc;
-  --color-cream: #fffdf5;
+  /* Colors - Premium Preschool Palette */
+  --color-navy: #1E3A5F;
+  --color-navy-dark: #12223a;
+  --color-navy-light: #3b5a82;
+  --color-yellow-main: #F8C94A;
+  --color-yellow-dark: #c49a2a;
+  --color-yellow-light: #fef9c3;
+  --color-beige: #F9F7F3;
+  --color-beige-dark: #f1ede5;
   --color-white: #ffffff;
   --color-card-bg: #ffffff;
-  --color-text: #334155;
-  --color-text-light: #64748b;
+
+  /* Color System Map to preserve card/helper mappings with a cohesive tone */
+  --color-sky: var(--color-beige-dark);
+  --color-sky-dark: var(--color-navy);
+  --color-sky-main: var(--color-navy-light);
+  
+  --color-pink: #fdf2f8;
+  --color-pink-dark: var(--color-navy);
+  --color-pink-main: var(--color-yellow-main);
+  
+  --color-green: #f0fdf4;
+  --color-green-dark: var(--color-navy);
+  --color-green-main: var(--color-yellow-main);
+  
+  --color-yellow: var(--color-yellow-light);
+  --color-yellow-dark: var(--color-navy);
+  
+  --color-purple: var(--color-f5f3ff);
+  --color-purple-dark: var(--color-navy);
+  --color-purple-main: var(--color-navy-light);
+
+  --color-orange: #fff7ed;
+  --color-orange-dark: var(--color-navy);
+  --color-orange-main: var(--color-yellow-main);
+
+  /* Neutrals */
+  --color-bg: var(--color-beige);
+  --color-cream: #ffffff;
+  --color-text: var(--color-navy);
+  --color-text-light: #4A5568;
   --color-border: #e2e8f0;
 
   /* Borders & Shadows */
@@ -47,13 +56,13 @@
   --radius-circle: 50%;
   
   --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
-  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.06), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-pastel-sky: 0 8px 20px rgba(56, 189, 248, 0.2);
-  --shadow-pastel-pink: 0 8px 20px rgba(244, 114, 182, 0.2);
-  --shadow-pastel-green: 0 8px 20px rgba(74, 222, 128, 0.2);
-  --shadow-pastel-yellow: 0 8px 20px rgba(250, 204, 21, 0.22);
-  --shadow-premium: 0 15px 35px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 10px 15px -3px rgba(30, 58, 95, 0.05), 0 4px 6px -2px rgba(30, 58, 95, 0.03);
+  --shadow-lg: 0 20px 25px -5px rgba(30, 58, 95, 0.06), 0 10px 10px -5px rgba(30, 58, 95, 0.04);
+  --shadow-pastel-sky: 0 8px 20px rgba(30, 58, 95, 0.1);
+  --shadow-pastel-pink: 0 8px 20px rgba(248, 201, 74, 0.15);
+  --shadow-pastel-green: 0 8px 20px rgba(248, 201, 74, 0.15);
+  --shadow-pastel-yellow: 0 8px 20px rgba(248, 201, 74, 0.2);
+  --shadow-premium: 0 15px 35px rgba(30, 58, 95, 0.08);
 
   /* Transitions */
   --transition-bounce: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -3078,4 +3087,176 @@ footer {
   .tab-btn { width: calc(50% - 6px); text-align: center; padding: 10px 14px; font-size: 0.95rem; }
   .fee-table-card { padding: 20px 10px; }
   .enroll-form-card { padding: 24px 16px; }
+}
+
+/* --- Learning Methodology Pathway --- */
+.methodology-flow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  position: relative;
+  margin-top: 40px;
+}
+
+.methodology-step {
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 24px;
+  width: calc(16.66% - 14px);
+  min-width: 150px;
+  text-align: center;
+  position: relative;
+  border: 1px solid var(--color-border);
+  transition: var(--transition-bounce);
+  z-index: 2;
+}
+
+.methodology-step:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-yellow-main);
+}
+
+.methodology-step .step-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-yellow-light);
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 auto 12px auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.methodology-step h4 {
+  font-size: 1rem;
+  color: var(--color-navy);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.methodology-step p {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  line-height: 1.4;
+}
+
+.methodology-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-yellow-main);
+  font-size: 1.5rem;
+  z-index: 1;
+}
+
+/* --- Schedule a Callback Form --- */
+.callback-section {
+  background: linear-gradient(135deg, var(--color-navy), var(--color-navy-dark));
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: 60px 48px;
+  margin: 60px auto;
+  max-width: 1000px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.callback-section::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(248, 201, 74, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.callback-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.callback-text h3 {
+  color: var(--color-yellow-main);
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
+.callback-text p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.callback-card {
+  background: white;
+  padding: 32px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-premium);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.callback-card .form-group {
+  margin-bottom: 16px;
+}
+
+.callback-card .form-group label {
+  color: var(--color-navy);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.callback-card .btn-primary {
+  width: 100%;
+  justify-content: center;
+  padding: 14px;
+  background: var(--color-yellow-main);
+  color: var(--color-navy);
+  box-shadow: var(--shadow-pastel-yellow);
+}
+
+.callback-card .btn-primary:hover {
+  background: var(--color-navy-dark);
+  color: var(--color-white);
+  box-shadow: var(--shadow-pastel-sky);
+}
+
+/* Responsive Callback and Methodology */
+@media (max-width: 900px) {
+  .methodology-flow {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .methodology-step {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .methodology-arrow {
+    transform: rotate(90deg);
+    margin: -5px 0;
+  }
+  
+  .callback-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .callback-text {
+    text-align: center;
+  }
 }
