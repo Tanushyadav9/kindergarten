@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kindergarten - A Happy Place for Kids to Learn & Grow</title>
+  <meta name="description" content="Welcome to Kindergarten, a modern, professional, and colorful playschool dedicated to child-centric learning, play, and growth. Enroll your child today!">
+  
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  
+  <!-- FontAwesome for cute icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Decorative Ornaments -->
+  <div class="cloud-bg"></div>
+
+  <!-- --- HEADER NAVIGATION --- -->
+  <header id="main-header">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <div class="logo-icon">K</div>
+        <div class="logo-text">
+          Kindergarten
+          <span>PLAY & LEARN</span>
+        </div>
+      </a>
+      
+      <!-- Hamburger Toggle -->
+      <button class="mobile-toggle" aria-label="Toggle Navigation" id="mobile-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Nav List -->
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item" data-page="home"><a href="#home" class="nav-link">Home</a></li>
+        <li class="nav-item" data-page="programs"><a href="#home#programs-section" class="nav-link">Programs</a></li>
+        <li class="nav-item" data-page="gallery"><a href="#home#gallery-section" class="nav-link">Gallery</a></li>
+        <li class="nav-item" data-page="admissions"><a href="#admissions" class="nav-link">Admissions</a></li>
+        <li class="nav-item" data-page="locate-us"><a href="#locate-us" class="nav-link">Locate Us</a></li>
+        <li><a href="#admissions#enrollment-section" class="nav-cta">Enroll Now</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- --- TOAST MESSAGE NOTIFICATION --- -->
+  <div id="toast" class="toast-msg"></div>
+
+
+  <!-- ==================== HOME PAGE ==================== -->
+  <main id="home" class="page-route active">
+    
+    <!-- Hero Section -->
+    <section class="hero bg-wave-container">
+      <div class="container hero-grid">
+        <div class="hero-text-content">
+          <span class="hero-tag">Welcome to Kindergarten</span>
+          <h1 class="hero-title">
+            Where learning feels like <span class="sky">play</span>, and play is how we <span class="pink">grow</span>!
+          </h1>
+          <p class="hero-desc">
+            A vibrant, safe, and stimulating environment designed for your little explorers. We nurture young minds through creative activities, professional care, and a child-centric curriculum.
+          </p>
+          <div class="hero-ctas">
+            <a href="#admissions#enrollment-section" class="btn-primary">Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#locate-us" class="btn-secondary">Explore Campus <i class="fa-solid fa-location-dot"></i></a>
+          </div>
+        </div>
+        <div class="hero-images-container">
+          <div class="hero-img-card">
+            <!-- Generated Premium Image -->
+            <img src="assets/hero_kids.png" alt="Happy preschool children playing and learning in a colorful classroom">
+            <div class="hero-badge">
+              <span>ESTD</span>
+              2011
+              <span>15 Years</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Statistics Bar -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-bar">
+          <div class="stat-item">
+            <div class="stat-num" data-target="500">0</div>
+            <div class="stat-label">Happy Graduates</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" data-target="25">0</div>
+            <div class="stat-label">Certified Educators</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" data-target="15">0</div>
+            <div class="stat-label">Years of Excellence</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" data-target="6">0</div>
+            <div class="stat-label">National Awards</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduction Section (Mission & Vision) -->
+    <section class="intro-section section-padding">
+      <div class="container text-center">
+        <h2 class="section-title">Our <span>Philosophy</span></h2>
+        <p class="section-subtitle">We believe that every child is unique, full of potential, and learns best when they are happy and engaged.</p>
+        
+        <div class="intro-cards">
+          <div class="intro-card pink">
+            <div class="intro-icon"><i class="fa-solid fa-heart"></i></div>
+            <h3>Our Mission</h3>
+            <p>To provide a safe, nurturing, and colorful environment that inspires young minds to learn, create, and build friendships. We lay the foundations for lifelong curiosity and academic growth.</p>
+          </div>
+          <div class="intro-card sky">
+            <div class="intro-icon"><i class="fa-solid fa-eye"></i></div>
+            <h3>Our Vision</h3>
+            <p>To be recognized as a premier center of early childhood education where child development, modern educational methods, and parents' peace of mind meet harmoniously.</p>
+          </div>
+          <div class="intro-card green">
+            <div class="intro-icon"><i class="fa-solid fa-star"></i></div>
+            <h3>Core Values</h3>
+            <p>Safety first, learning through play, empathetic teaching, celebration of diversity, and a collaborative bond with parents to guide each child's individual milestones.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs Quick Overview -->
+    <section id="programs-section" class="programs-section section-padding" style="background-color: var(--color-cream);">
+      <div class="container text-center">
+        <h2 class="section-title">Nurturing <span>Programs</span></h2>
+        <p class="section-subtitle">Specially curated classrooms and curricula for different age groups to align with early growth milestones.</p>
+        
+        <div class="programs-overview-grid">
+          <!-- Playgroup -->
+          <div class="program-card playgroup">
+            <div class="prog-img-wrapper">👶</div>
+            <div class="prog-content">
+              <span class="prog-badge">1.5 - 2.5 Years</span>
+              <h3>Playgroup</h3>
+              <p>Focuses on tactile experiences, basic motor skills, social adjustments, and basic verbal expressions in a warm playground setting.</p>
+              <a href="#admissions" class="prog-learn-more" data-tab="playgroup">View Curriculum <i class="fa-solid fa-angle-right"></i></a>
+            </div>
+          </div>
+          <!-- Nursery -->
+          <div class="program-card nursery">
+            <div class="prog-img-wrapper">🎨</div>
+            <div class="prog-content">
+              <span class="prog-badge">2.5 - 3.5 Years</span>
+              <h3>Nursery</h3>
+              <p>Promotes logical skills, storytelling, creative expression through painting, music, and foundational language understanding.</p>
+              <a href="#admissions" class="prog-learn-more" data-tab="nursery">View Curriculum <i class="fa-solid fa-angle-right"></i></a>
+            </div>
+          </div>
+          <!-- Junior KG -->
+          <div class="program-card junior-kg">
+            <div class="prog-img-wrapper">📝</div>
+            <div class="prog-content">
+              <span class="prog-badge">3.5 - 4.5 Years</span>
+              <h3>Junior KG</h3>
+              <p>Introduces structured phonics, numbers, writing strokes, interactive science experiments, and independent daily tasks.</p>
+              <a href="#admissions" class="prog-learn-more" data-tab="junior">View Curriculum <i class="fa-solid fa-angle-right"></i></a>
+            </div>
+          </div>
+          <!-- Senior KG -->
+          <div class="program-card senior-kg">
+            <div class="prog-img-wrapper">🚀</div>
+            <div class="prog-content">
+              <span class="prog-badge">4.5 - 5.5 Years</span>
+              <h3>Senior KG</h3>
+              <p>Prepares students for primary school through descriptive reading, arithmetic operations, basic coding tasks, and team leadership challenges.</p>
+              <a href="#admissions" class="prog-learn-more" data-tab="senior">View Curriculum <i class="fa-solid fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Educators & Staff Section -->
+    <section class="staff-section section-padding">
+      <div class="container text-center">
+        <h2 class="section-title">Our Loving <span>Educators</span></h2>
+        <p class="section-subtitle">Meet the qualified, caring, and passionate staff members who look after your little ones.</p>
+        
+        <div class="educators-grid">
+          <!-- Staff 1 -->
+          <div class="educator-card">
+            <div class="educator-polaroid">👩‍🏫</div>
+            <span class="educator-badge">Principal</span>
+            <h3>Mrs. Evelyn Carter</h3>
+            <p class="educator-role">Child Psychologist & Principal</p>
+            <div class="educator-bubble">"Early education is the soil where character grows. We cultivate it with love."</div>
+          </div>
+          <!-- Staff 2 -->
+          <div class="educator-card">
+            <div class="educator-polaroid">👩‍🎨</div>
+            <span class="educator-badge">Nursery lead</span>
+            <h3>Ms. Sarah Jenkins</h3>
+            <p class="educator-role">Arts & Crafts Specialist</p>
+            <div class="educator-bubble">"I believe creativity is a child's natural language. We paint dreams here!"</div>
+          </div>
+          <!-- Staff 3 -->
+          <div class="educator-card">
+            <div class="educator-polaroid">👨‍🏫</div>
+            <span class="educator-badge">Senior KG lead</span>
+            <h3>Mr. David Miller</h3>
+            <p class="educator-role">Phonics & Early Math Trainer</p>
+            <div class="educator-bubble">"Making logic and alphabets playful is the key to creating lifelong readers."</div>
+          </div>
+          <!-- Staff 4 -->
+          <div class="educator-card">
+            <div class="educator-polaroid">👩‍⚕️</div>
+            <span class="educator-badge">Care Specialist</span>
+            <h3>Ms. Rita Gomez</h3>
+            <p class="educator-role">Certified Pediatric Nurse & Caretaker</p>
+            <div class="educator-bubble">"Your child's physical safety, hygiene, and mental health are my highest values."</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements-section section-padding" style="background-color: #fffdf9;">
+      <div class="container achieve-container">
+        <div class="achieve-ill">🏆</div>
+        <div>
+          <h2 class="section-title" style="display: block; text-align: left;">Our <span>Achievements</span></h2>
+          <p class="section-subtitle" style="margin-left: 0; text-align: left; max-width: 100%;">Recognized for our unwavering focus on child development and quality teaching.</p>
+          
+          <div class="achieve-list">
+            <div class="achieve-item">
+              <div class="achieve-icon-box"><i class="fa-solid fa-award"></i></div>
+              <div class="achieve-details">
+                <h4>Best Early Education Curriculum Award</h4>
+                <p>Awarded by the National Association for Early Childhood Care for our innovative play-and-learn modular syllabus (2024).</p>
+              </div>
+            </div>
+            <div class="achieve-item">
+              <div class="achieve-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+              <div class="achieve-details">
+                <h4>100% Safe Preschool Accreditation</h4>
+                <p>Recognized for implementing advanced fire, health, childproofing, and CCTV surveillance standards across the campus.</p>
+              </div>
+            </div>
+            <div class="achieve-item">
+              <div class="achieve-icon-box"><i class="fa-solid fa-users"></i></div>
+              <div class="achieve-details">
+                <h4>Highest Parent Satisfaction Rating (4.9/5)</h4>
+                <p>Voted the most transparent and community-friendly playschool by independent parenting survey associations for 3 consecutive years.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parent Testimonials Section -->
+    <section class="testimonials-section section-padding">
+      <div class="container text-center">
+        <h2 class="section-title">What <span>Parents</span> Say</h2>
+        <p class="section-subtitle">Read real reviews from mothers and fathers who trusted Kindergarten with their children's initial steps.</p>
+        
+        <div class="testimonials-carousel-wrapper">
+          <button class="carousel-nav-btn prev" id="carousel-prev" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="carousel-nav-btn next" id="carousel-next" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+          
+          <div class="testimonials-track" id="testimonials-track">
+            <!-- Slide 1 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-bubble">
+                <i class="fa-solid fa-quote-left testimonial-quote-icon"></i>
+                <p>"Sending our daughter Lily to Kindergarten was the best decision we made. She used to be very shy, but in just six months, her confidence skyrocketed. She wakes up excited to go to school every single day!"</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">👩</div>
+                <div class="author-info">
+                  <h4>Rebecca Watson</h4>
+                  <span>Mother of Lily (Junior KG)</span>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-bubble">
+                <i class="fa-solid fa-quote-left testimonial-quote-icon"></i>
+                <p>"The teachers at Kindergarten are absolute saints. They understand child behavioral psychology so well. The updates we receive on the child's milestones show how closely they focus on each pupil."</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">👨</div>
+                <div class="author-info">
+                  <h4>Michael Chen</h4>
+                  <span>Father of Leo (Nursery)</span>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-bubble">
+                <i class="fa-solid fa-quote-left testimonial-quote-icon"></i>
+                <p>"The campus safety and cleaning processes are fantastic. As a working mother, my main worry was security and nutrition, but their CCTV accessibility and nutritional meals program solved everything for me."</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">👩</div>
+                <div class="author-info">
+                  <h4>Sarah McArthur</h4>
+                  <span>Mother of Chloe (Playgroup)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="carousel-dots" id="carousel-dots">
+            <div class="carousel-dot active" data-index="0"></div>
+            <div class="carousel-dot" data-index="1"></div>
+            <div class="carousel-dot" data-index="2"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery-section" class="gallery-section section-padding" style="background-color: var(--color-cream);">
+      <div class="container text-center">
+        <h2 class="section-title">Life at <span>Kindergarten</span></h2>
+        <p class="section-subtitle">Take a look inside our classrooms, play zones, and events to see our learning methods in action.</p>
+        
+        <div class="gallery-grid">
+          <!-- Item 1 -->
+          <div class="gallery-item" data-caption="Arts & Crafts Fun">
+            <div class="gallery-placeholder">
+              <span class="gallery-placeholder-icon">🎨</span>
+              <span class="gallery-caption">Arts & Crafts</span>
+            </div>
+            <div class="gallery-item-overlay"><i class="fa-solid fa-plus"></i></div>
+          </div>
+          <!-- Item 2 -->
+          <div class="gallery-item" data-caption="Outdoor Playground Adventure">
+            <div class="gallery-placeholder">
+              <span class="gallery-placeholder-icon">🛝</span>
+              <span class="gallery-caption">Outdoor Play</span>
+            </div>
+            <div class="gallery-item-overlay"><i class="fa-solid fa-plus"></i></div>
+          </div>
+          <!-- Item 3 -->
+          <div class="gallery-item" data-caption="Interactive Science Sandbox">
+            <div class="gallery-placeholder">
+              <span class="gallery-placeholder-icon">🧪</span>
+              <span class="gallery-caption">Science Fun</span>
+            </div>
+            <div class="gallery-item-overlay"><i class="fa-solid fa-plus"></i></div>
+          </div>
+          <!-- Item 4 -->
+          <div class="gallery-item" data-caption="Storytelling & Reading Hours">
+            <div class="gallery-placeholder">
+              <span class="gallery-placeholder-icon">📚</span>
+              <span class="gallery-caption">Story Time</span>
+            </div>
+            <div class="gallery-item-overlay"><i class="fa-solid fa-plus"></i></div>
+          </div>
+          <!-- Item 5 -->
+          <div class="gallery-item" data-caption="Music & Early Dance Session">
+            <div class="gallery-placeholder">
+              <span class="gallery-placeholder-icon">🎵</span>
+              <span class="gallery-caption">Music & Dance</span>
+            </div>
+            <div class="gallery-item-overlay"><i class="fa-solid fa-plus"></i></div>
+          </div>
+          <!-- Item 6 -->
+          <div class="gallery-item" data-caption="Organic Clay Modeling">
+            <div class="gallery-placeholder">
+              <span class="gallery-placeholder-icon">🧱</span>
+              <span class="gallery-caption">Clay Modeling</span>
+            </div>
+            <div class="gallery-item-overlay"><i class="fa-solid fa-plus"></i></div>
+          </div>
+          <!-- Item 7 -->
+          <div class="gallery-item" data-caption="Nutritional Group Lunch">
+            <div class="gallery-placeholder">
+              <span class="gallery-placeholder-icon">🍎</span>
+              <span class="gallery-caption">Healthy Dining</span>
+            </div>
+            <div class="gallery-item-overlay"><i class="fa-solid fa-plus"></i></div>
+          </div>
+          <!-- Item 8 -->
+          <div class="gallery-item" data-caption="Annual Costume Celebration">
+            <div class="gallery-placeholder">
+              <span class="gallery-placeholder-icon">🎭</span>
+              <span class="gallery-caption">Annual Festival</span>
+            </div>
+            <div class="gallery-item-overlay"><i class="fa-solid fa-plus"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Lightbox Modal -->
+    <div id="gallery-lightbox" class="lightbox">
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+        <div class="lightbox-img-wrapper" id="lightbox-emoji">🎨</div>
+        <div class="lightbox-caption" id="lightbox-caption">Caption text here</div>
+      </div>
+    </div>
+
+    <!-- Final Admissions CTA Section -->
+    <section class="cta-section section-padding">
+      <div class="container">
+        <div class="cta-banner">
+          <h2>Ready to give your child the best start?</h2>
+          <p>Admissions are open for the academic term 2026-2027. Secure a seat in our playful and nurturing classrooms today.</p>
+          <a href="#admissions#enrollment-section" class="btn-primary">Start Online Inquiry <i class="fa-solid fa-paper-plane"></i></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==================== ADMISSIONS PAGE ==================== -->
+  <main id="admissions" class="page-route">
+    <section class="section-padding bg-wave-container">
+      <div class="container text-center">
+        <h2 class="section-title">Join Our <span>Family</span></h2>
+        <p class="section-subtitle">Everything you need to know about criteria, dates, curriculum outcomes, and securing your child's seat.</p>
+
+        <!-- Admission Steps Timeline -->
+        <div class="admission-steps section-padding">
+          <div class="admission-step-card">
+            <div class="step-num-badge">1</div>
+            <h3>Inquiry Submission</h3>
+            <p>Fill out our simple online inquiry wizard below to share your requirements and basic child details.</p>
+          </div>
+          <div class="admission-step-card">
+            <div class="step-num-badge">2</div>
+            <h3>Campus Visit</h3>
+            <p>Schedule a personal school tour to view our classrooms, play zones, security structures, and meet our teachers.</p>
+          </div>
+          <div class="admission-step-card">
+            <div class="step-num-badge">3</div>
+            <h3>Document Upload</h3>
+            <p>Submit basic documents like birth certificates and immunization records for validation by our Principal.</p>
+          </div>
+          <div class="admission-step-card">
+            <div class="step-num-badge">4</div>
+            <h3>Securing Seat</h3>
+            <p>Complete minimal registration details and receive an immediate welcome packet with academic calendars.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs & Detailed Curriculum Switcher -->
+    <section class="curriculum-section section-padding" style="background-color: var(--color-cream);">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-title">Our Detailed <span>Curricula</span></h2>
+          <p class="section-subtitle">Switch between programs below to view learning goals, curriculum outlines, and daily routines.</p>
+        </div>
+
+        <!-- Tab Buttons -->
+        <div class="curriculum-tabs">
+          <button class="tab-btn active" data-program="playgroup">👶 Playgroup</button>
+          <button class="tab-btn" data-program="nursery">🎨 Nursery</button>
+          <button class="tab-btn" data-program="junior">📝 Junior KG</button>
+          <button class="tab-btn" data-program="senior">🚀 Senior KG</button>
+        </div>
+
+        <!-- Tab Panels -->
+        <!-- Playgroup Panel -->
+        <div class="curriculum-content-panel active active-playgroup" id="curr-playgroup">
+          <div class="curr-panel-grid">
+            <div class="curr-panel-left">
+              <h3>Playgroup Learning Track</h3>
+              <span class="prog-age">Age Limit: 1.5 - 2.5 Years</span>
+              <p class="desc">A playgroup curriculum focuses on tactile experiences, basic motor development, speaking, and social adaptability. The classroom is free-flowing and filled with safe foam blocks and toys.</p>
+              
+              <h4>Expected Learning Outcomes</h4>
+              <ul class="outcomes-list">
+                <li>Develop gross motor skills (crawling, basic balancing, holding small wooden pegs).</li>
+                <li>Improve verbal abilities through sing-alongs, rhymes, and interactive actions.</li>
+                <li>Social adjustments (sharing toys, greeting teachers, sitting in child groups).</li>
+                <li>Basic toilet routines and independent cleanup instructions.</li>
+              </ul>
+            </div>
+            <div class="curr-panel-right">
+              <h4>Typical Daily Routine</h4>
+              <div class="schedule-list">
+                <div class="schedule-item"><span class="schedule-time">09:00 AM</span><span class="schedule-act">Arrival & Circle Play</span></div>
+                <div class="schedule-item"><span class="schedule-time">09:30 AM</span><span class="schedule-act">Alphabet Singing & Rhymes</span></div>
+                <div class="schedule-item"><span class="schedule-time">10:00 AM</span><span class="schedule-act">Tactile Toy Assembly</span></div>
+                <div class="schedule-item"><span class="schedule-time">10:45 AM</span><span class="schedule-act">Healthy Fruit Snack Time</span></div>
+                <div class="schedule-item"><span class="schedule-time">11:15 AM</span><span class="schedule-act">Sandpit & Slide Activity</span></div>
+                <div class="schedule-item"><span class="schedule-time">12:00 PM</span><span class="schedule-act">Nap Time or Story Hearing</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nursery Panel -->
+        <div class="curriculum-content-panel active-nursery" id="curr-nursery">
+          <div class="curr-panel-grid">
+            <div class="curr-panel-left">
+              <h3>Nursery Learning Track</h3>
+              <span class="prog-age">Age Limit: 2.5 - 3.5 Years</span>
+              <p class="desc">Nursery introduces interactive art-based education, pre-writing pencil holding, color/shape recognition, and dramatic role-plays to build emotional independence.</p>
+              
+              <h4>Expected Learning Outcomes</h4>
+              <ul class="outcomes-list">
+                <li>Identify colors, geometric shapes, and group objects by categories.</li>
+                <li>Phonics sounds for letters A to Z and simple word identification.</li>
+                <li>Independent painting, clay sculpting, and block coloring skills.</li>
+                <li>Express complex emotions clearly and ask logical questions to peers.</li>
+              </ul>
+            </div>
+            <div class="curr-panel-right">
+              <h4>Typical Daily Routine</h4>
+              <div class="schedule-list">
+                <div class="schedule-item"><span class="schedule-time">09:00 AM</span><span class="schedule-act">Circle Talk & Emotion Charts</span></div>
+                <div class="schedule-item"><span class="schedule-time">09:30 AM</span><span class="schedule-act">Letter Phonics Sound Drill</span></div>
+                <div class="schedule-item"><span class="schedule-time">10:15 AM</span><span class="schedule-act">Arts, Crafts, & Clay Sculpting</span></div>
+                <div class="schedule-item"><span class="schedule-time">11:00 AM</span><span class="schedule-act">Snack & Sharing Practice</span></div>
+                <div class="schedule-item"><span class="schedule-time">11:30 AM</span><span class="schedule-act">Outdoor Obstacle Course</span></div>
+                <div class="schedule-item"><span class="schedule-time">12:00 PM</span><span class="schedule-act">Vocabulary Building Game</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Junior KG Panel -->
+        <div class="curriculum-content-panel active-junior" id="curr-junior">
+          <div class="curr-panel-grid">
+            <div class="curr-panel-left">
+              <h3>Junior KG Learning Track</h3>
+              <span class="prog-age">Age Limit: 3.5 - 4.5 Years</span>
+              <p class="desc">Junior KG features systematic writing drills, reading basic three-letter words, simple math additions using visual grids, and engaging early environmental science lessons.</p>
+              
+              <h4>Expected Learning Outcomes</h4>
+              <ul class="outcomes-list">
+                <li>Write uppercase and lowercase letters neatly on grids.</li>
+                <li>Basic counting up to 50 and simple additions under 10.</li>
+                <li>Understand local nature concepts (seasons, animals, plant structures).</li>
+                <li>Interact fluidly in conversational English and participate in speech.</li>
+              </ul>
+            </div>
+            <div class="curr-panel-right">
+              <h4>Typical Daily Routine</h4>
+              <div class="schedule-list">
+                <div class="schedule-item"><span class="schedule-time">09:00 AM</span><span class="schedule-act">Morning Assembly & News</span></div>
+                <div class="schedule-item"><span class="schedule-time">09:30 AM</span><span class="schedule-act">Writing Drill (Alphabet/Numbers)</span></div>
+                <div class="schedule-item"><span class="schedule-time">10:30 AM</span><span class="schedule-act">Plant Growth / Nature Observation</span></div>
+                <div class="schedule-item"><span class="schedule-time">11:00 AM</span><span class="schedule-act">Healthy Dining Practices</span></div>
+                <div class="schedule-item"><span class="schedule-time">11:30 AM</span><span class="schedule-act">Guided Gymnastics Play</span></div>
+                <div class="schedule-item"><span class="schedule-time">12:15 PM</span><span class="schedule-act">Word Pronunciation Contest</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Senior KG Panel -->
+        <div class="curriculum-content-panel active-senior" id="curr-senior">
+          <div class="curr-panel-grid">
+            <div class="curr-panel-left">
+              <h3>Senior KG Learning Track</h3>
+              <span class="prog-age">Age Limit: 4.5 - 5.5 Years</span>
+              <p class="desc">Preparing kids for primary school. Focuses on descriptive reading, math additions/subtractions, creative science hypotheses, and building leadership and team behaviors.</p>
+              
+              <h4>Expected Learning Outcomes</h4>
+              <ul class="outcomes-list">
+                <li>Fluent reading of short paragraph storybooks and basic dictionary use.</li>
+                <li>Understand basic subtractions and multi-digit identification up to 100.</li>
+                <li>Conduct safety tasks, public speaking, and team leadership drills.</li>
+                <li>Use basic computer mouse clicking, drawing, and screen actions.</li>
+              </ul>
+            </div>
+            <div class="curr-panel-right">
+              <h4>Typical Daily Routine</h4>
+              <div class="schedule-list">
+                <div class="schedule-item"><span class="schedule-time">09:00 AM</span><span class="schedule-act">Show-and-Tell Speaking</span></div>
+                <div class="schedule-item"><span class="schedule-time">09:30 AM</span><span class="schedule-act">Paragraph Reading & Phonics</span></div>
+                <div class="schedule-item"><span class="schedule-time">10:30 AM</span><span class="schedule-act">Interactive Math Addition Grid</span></div>
+                <div class="schedule-item"><span class="schedule-time">11:15 AM</span><span class="schedule-act">Nutrition & Social Dining</span></div>
+                <div class="schedule-item"><span class="schedule-time">11:45 AM</span><span class="schedule-act">Science Experiment (Water cycle)</span></div>
+                <div class="schedule-item"><span class="schedule-time">12:30 PM</span><span class="schedule-act">Basic Coding & Computer Time</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Admission details (Dates, Required Docs) -->
+    <section class="admission-meta-section section-padding">
+      <div class="container admissions-meta-grid">
+        <!-- Important Dates -->
+        <div class="adm-meta-card dates">
+          <h3><i class="fa-solid fa-calendar-days"></i> Important Admission Dates</h3>
+          <div class="dates-list">
+            <div class="date-row">
+              <span class="date-label">Admission Portals Open</span>
+              <span class="date-val">February 15, 2026</span>
+            </div>
+            <div class="date-row">
+              <span class="date-label">Early Bird Registration Closes</span>
+              <span class="date-val">March 31, 2026</span>
+            </div>
+            <div class="date-row">
+              <span class="date-label">Standard Admission Deadline</span>
+              <span class="date-val">May 15, 2026</span>
+            </div>
+            <div class="date-row">
+              <span class="date-label">Orientation Day Term A</span>
+              <span class="date-val">June 01, 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Required Documents -->
+        <div class="adm-meta-card docs">
+          <h3><i class="fa-solid fa-file-pdf"></i> Required Documents Checklist</h3>
+          <ul class="docs-list">
+            <li>Original and photocopy of Child's Birth Certificate.</li>
+            <li>Completed Immunization Chart (Pediatric record).</li>
+            <li>Proof of Residential Address (Utility bill, Rent contract).</li>
+            <li>3 passport-sized color photos of the Child.</li>
+            <li>1 passport-sized photo of each parent/guardian.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fee Structure Section -->
+    <section class="fees-section section-padding" style="background-color: #f8fafc;">
+      <div class="container">
+        <div class="fee-table-card">
+          <h3>Academic <span>Fee Structure</span> (2026-2027)</h3>
+          
+          <div class="fee-table-wrapper">
+            <table class="fee-table">
+              <thead>
+                <tr>
+                  <th>Program Name</th>
+                  <th>Admission Fee (One-Time)</th>
+                  <th>Tuition Fee (Quarterly)</th>
+                  <th>Activity & Materials Fee (Annual)</th>
+                  <th>Optional Meal Program (Monthly)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Playgroup</strong></td>
+                  <td>$200</td>
+                  <td>$850</td>
+                  <td>$150</td>
+                  <td>$80</td>
+                </tr>
+                <tr>
+                  <td><strong>Nursery</strong></td>
+                  <td>$200</td>
+                  <td>$950</td>
+                  <td>$180</td>
+                  <td>$80</td>
+                </tr>
+                <tr>
+                  <td><strong>Junior KG</strong></td>
+                  <td>$200</td>
+                  <td>$1,100</td>
+                  <td>$200</td>
+                  <td>$85</td>
+                </tr>
+                <tr>
+                  <td><strong>Senior KG</strong></td>
+                  <td>$200</td>
+                  <td>$1,200</td>
+                  <td>$200</td>
+                  <td>$85</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="fee-note">* Transportation fees are computed separately based on location radius from the school (starting from $50/month).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Online Admission Inquiry Form (Wizard) -->
+    <section id="enrollment-section" class="enrollment-section section-padding">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-title">Online <span>Enrollment Inquiry</span></h2>
+          <p class="section-subtitle">Complete our secure, multi-step online wizard to check seat availability and eligibility.</p>
+        </div>
+
+        <div class="enroll-form-card" id="enroll-wizard">
+          
+          <!-- Wizard Steps Headers -->
+          <div class="form-wizard-progress">
+            <div class="progress-line-fill" id="wizard-progress-bar"></div>
+            <div class="wizard-step-node active" data-step="1">
+              1
+              <span class="wizard-step-label">Child Info</span>
+            </div>
+            <div class="wizard-step-node" data-step="2">
+              2
+              <span class="wizard-step-label">Parent Info</span>
+            </div>
+            <div class="wizard-step-node" data-step="3">
+              3
+              <span class="wizard-step-label">Program Selection</span>
+            </div>
+          </div>
+
+          <!-- Wizard Form Container -->
+          <form id="admission-form">
+            <!-- STEP 1: Child Details -->
+            <div class="form-step-panel active" data-step="1">
+              <h3>Child Information</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="child-firstname">First Name <span>*</span></label>
+                  <input type="text" id="child-firstname" class="form-control" placeholder="Enter first name" required>
+                  <span class="error-msg">Please enter a valid first name.</span>
+                </div>
+                <div class="form-group">
+                  <label for="child-lastname">Last Name <span>*</span></label>
+                  <input type="text" id="child-lastname" class="form-control" placeholder="Enter last name" required>
+                  <span class="error-msg">Please enter a valid last name.</span>
+                </div>
+                <div class="form-group">
+                  <label for="child-dob">Date of Birth <span>*</span></label>
+                  <input type="date" id="child-dob" class="form-control" required>
+                  <span class="error-msg">Age must be between 1.5 and 6 years.</span>
+                </div>
+                <div class="form-group">
+                  <label for="child-gender">Gender <span>*</span></label>
+                  <select id="child-gender" class="form-control" required>
+                    <option value="" disabled selected>Select gender</option>
+                    <option value="boy">Boy</option>
+                    <option value="girl">Girl</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <span class="error-msg">Please select gender.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 2: Parent Details -->
+            <div class="form-step-panel" data-step="2">
+              <h3>Parent / Guardian Information</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="parent-name">Guardian Full Name <span>*</span></label>
+                  <input type="text" id="parent-name" class="form-control" placeholder="Enter full name" required>
+                  <span class="error-msg">Please enter name (minimum 3 letters).</span>
+                </div>
+                <div class="form-group">
+                  <label for="parent-relationship">Relationship <span>*</span></label>
+                  <select id="parent-relationship" class="form-control" required>
+                    <option value="" disabled selected>Select relationship</option>
+                    <option value="father">Father</option>
+                    <option value="mother">Mother</option>
+                    <option value="guardian">Guardian</option>
+                  </select>
+                  <span class="error-msg">Please select relationship.</span>
+                </div>
+                <div class="form-group">
+                  <label for="parent-phone">Phone Number <span>*</span></label>
+                  <input type="tel" id="parent-phone" class="form-control" placeholder="Enter 10-digit number" required>
+                  <span class="error-msg">Please enter a valid 10-digit phone number.</span>
+                </div>
+                <div class="form-group">
+                  <label for="parent-email">Email Address <span>*</span></label>
+                  <input type="email" id="parent-email" class="form-control" placeholder="example@email.com" required>
+                  <span class="error-msg">Please enter a valid email.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 3: Class Selection -->
+            <div class="form-step-panel" data-step="3">
+              <h3>Program Selection & Options</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="select-program">Desired Program <span>*</span></label>
+                  <select id="select-program" class="form-control" required>
+                    <option value="" disabled selected>Select program</option>
+                    <option value="playgroup">Playgroup (1.5 - 2.5 Yrs)</option>
+                    <option value="nursery">Nursery (2.5 - 3.5 Yrs)</option>
+                    <option value="junior">Junior KG (3.5 - 4.5 Yrs)</option>
+                    <option value="senior">Senior KG (4.5 - 5.5 Yrs)</option>
+                  </select>
+                  <span class="error-msg">Please select a program.</span>
+                </div>
+                <div class="form-group">
+                  <label for="select-transport">Optional School Bus <span>*</span></label>
+                  <select id="select-transport" class="form-control" required>
+                    <option value="no">No, Self Drop-off</option>
+                    <option value="yes">Yes, Request Pick-up</option>
+                  </select>
+                </div>
+                <div class="form-group form-group-full">
+                  <label for="parent-notes">Medical/Special Needs or Care Notes</label>
+                  <textarea id="parent-notes" class="form-control" rows="3" placeholder="List allergies, emergency instructions, or specific behavior traits if any..."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions buttons -->
+            <div class="form-actions">
+              <button type="button" class="btn-prev-step" id="btn-prev" style="display: none;"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+              <button type="button" class="btn-next-step" id="btn-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </form>
+
+          <!-- Confetti Canvas on success submit -->
+          <canvas id="confetti" class="confetti-canvas"></canvas>
+
+          <!-- Success Panel -->
+          <div class="form-success-container" id="form-success" style="display: none;">
+            <div class="success-icon-box"><i class="fa-solid fa-check"></i></div>
+            <h3>Inquiry Submitted!</h3>
+            <p>Thank you for submitting details for <strong id="success-child-name">your child</strong>. A coordinator will email you at <span id="success-parent-email">your email</span> within 24 hours to schedule your campus tour.</p>
+            <button type="button" class="btn-secondary" id="btn-reset-form">Submit Another Inquiry</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==================== LOCATE US PAGE ==================== -->
+  <main id="locate-us" class="page-route">
+    <section class="section-padding bg-wave-container">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-title">Visit Our <span>Campus</span></h2>
+          <p class="section-subtitle">Reach out to us or drop by for a tour. Find interactive maps, directions, and direct contacts.</p>
+        </div>
+
+        <div class="contact-details-grid">
+          
+          <!-- Contact details & Timings -->
+          <div class="info-cards-sub">
+            <!-- Address card -->
+            <div class="info-card-unit">
+              <div class="info-card-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+              <h4>School Address</h4>
+              <p>123 Blossom Lane, Sunshine Heights, Creative District, NY 10001</p>
+            </div>
+            
+            <!-- Contact card -->
+            <div class="info-card-unit">
+              <div class="info-card-icon"><i class="fa-solid fa-phone"></i></div>
+              <h4>Call & Email</h4>
+              <p>+1 (555) 123-4567<br>+1 (555) 987-6543<br>hello@kindergarten.edu</p>
+            </div>
+            
+            <!-- Dynamic Timings card -->
+            <div class="info-card-unit open-status">
+              <div class="info-card-icon"><i class="fa-solid fa-clock"></i></div>
+              <h4>Working Hours</h4>
+              <p>Monday - Friday: 08:00 AM - 03:00 PM<br>Saturday - Sunday: Closed</p>
+              <div id="timing-tag" class="timing-status-tag">Checking status...</div>
+            </div>
+          </div>
+
+          <!-- Quick Contact Form -->
+          <div class="contact-inquiry-card">
+            <h3>Quick Inquiry</h3>
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="contact-name">Full Name</label>
+                <input type="text" id="contact-name" class="form-control" placeholder="Enter your full name" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" class="form-control" placeholder="Enter your email" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" class="form-control" rows="4" placeholder="How can we help you?" required></textarea>
+              </div>
+              <button type="submit" class="btn-primary">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- Leaflet Map Container -->
+        <div class="map-container-wrapper">
+          <h3>Interactive Campus Map</h3>
+          <div id="map"></div>
+        </div>
+
+        <!-- Transportation & Pickup routes -->
+        <div class="transport-info-grid">
+          <div class="transport-card">
+            <h4><i class="fa-solid fa-bus"></i> School Bus Transport</h4>
+            <p>We operate 5 safety-vetted shuttle routes with GPS tracking and female support caretakers. Pinned routes cover the entire creative district and sunshine heights neighborhoods. Daily drop-off and pick-up are timed dynamically with school entry gates.</p>
+          </div>
+          <div class="transport-card">
+            <h4><i class="fa-solid fa-square-parking"></i> Drop-off Directions</h4>
+            <p>Parents dropped by vehicles are requested to enter via Blossom Lane Gate B for active child handover. Dedicated lanes are marked to avoid local traffic bottlenecks. Security officers are stationed to assist preschoolers during morning rush hours (07:45 - 08:15 AM).</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="footer-wave"></div>
+    <div class="container footer-grid">
+      
+      <!-- Logo col -->
+      <div class="footer-col">
+        <a href="#home" class="footer-logo logo">
+          <div class="logo-icon">K</div>
+          <span class="logo-text">Kindergarten</span>
+        </a>
+        <p class="footer-desc">A colorful, premium childhood education center dedicated to early development through sensory games, phonics, safety guidelines, and active peer play.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-icon-btn" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="social-icon-btn" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      
+      <!-- Quick Links col -->
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#home#programs-section">Class Programs</a></li>
+          <li><a href="#home#gallery-section">Photo Gallery</a></li>
+          <li><a href="#admissions">Admissions Info</a></li>
+          <li><a href="#locate-us">Campus Map</a></li>
+        </ul>
+      </div>
+
+      <!-- Programs col -->
+      <div class="footer-col">
+        <h3>Our Classes</h3>
+        <ul class="footer-links">
+          <li><a href="#admissions" class="prog-learn-more-foot" data-tab="playgroup">Playgroup (1.5-2.5 Yr)</a></li>
+          <li><a href="#admissions" class="prog-learn-more-foot" data-tab="nursery">Nursery (2.5-3.5 Yr)</a></li>
+          <li><a href="#admissions" class="prog-learn-more-foot" data-tab="junior">Junior KG (3.5-4.5 Yr)</a></li>
+          <li><a href="#admissions" class="prog-learn-more-foot" data-tab="senior">Senior KG (4.5-5.5 Yr)</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact details col -->
+      <div class="footer-col">
+        <h3>Get in Touch</h3>
+        <ul class="footer-contact-info">
+          <li>
+            <i class="fa-solid fa-location-dot footer-contact-icon"></i>
+            <span>123 Blossom Lane, Sunshine Heights, Creative District, NY 10001</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone footer-contact-icon"></i>
+            <span>+1 (555) 123-4567<br>+1 (555) 987-6543</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope footer-contact-icon"></i>
+            <span>hello@kindergarten.edu</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Kindergarten Playschool. All rights reserved. Designed with love for happy kids.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Leaflet Map JS script -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <!-- Custom scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
