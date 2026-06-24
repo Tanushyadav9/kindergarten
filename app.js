@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initBookTourPopup();
   initCallbackForm();
   initNewsletterForm();
+  initBrochureDownloads();
+  initAnnouncements();
 });
 
 /* --- Toast Notification Helper --- */
@@ -816,6 +818,12 @@ function initBookTourPopup() {
   }
   
   if (openBtnHero) openBtnHero.addEventListener('click', openModal);
+  
+  // Also open on clicking direct inter-section CTA buttons
+  document.querySelectorAll('.btn-trigger-tour-direct').forEach(btn => {
+    btn.addEventListener('click', openModal);
+  });
+
   closeBtn.addEventListener('click', closeModal);
   if (closeSuccessBtn) closeSuccessBtn.addEventListener('click', closeModal);
   
@@ -883,5 +891,59 @@ function initNewsletterForm() {
       form.reset();
       showToast(`Thank you! <strong>${email}</strong> has been subscribed to our admissions newsletter.`, 'success');
     }, 500);
+  });
+}
+
+/* ==========================================
+   15. Download Brochure Handler
+   ========================================== */
+function initBrochureDownloads() {
+  document.querySelectorAll('.btn-download').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const fileType = btn.getAttribute('data-file');
+      let fileName = 'Kindergarten_Prospectus.pdf';
+      let friendlyName = 'School Prospectus';
+      
+      if (fileType === 'curriculum') {
+        fileName = 'Kindergarten_Curriculum_Guide.pdf';
+        friendlyName = 'Curriculum Pathways Guide';
+      } else if (fileType === 'transport') {
+        fileName = 'Kindergarten_Transport_Routes.pdf';
+        friendlyName = 'Transport Route Info';
+      }
+      
+      showToast(`Generating & downloading ${friendlyName}...`, 'success');
+      
+      // Simulate file download
+      setTimeout(() => {
+        const dummyContent = `%PDF-1.4 ... Fake PDF Document for Kindergarten Preschool ${friendlyName} ...`;
+        const blob = new Blob([dummyContent], { type: 'application/pdf' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        showToast(`${friendlyName} downloaded successfully!`, 'success');
+      }, 1500);
+    });
+  });
+}
+
+/* ==========================================
+   16. Announcements View Details Handler
+   ========================================== */
+function initAnnouncements() {
+  document.querySelectorAll('.btn-read-announcement').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const type = btn.getAttribute('data-announcement');
+      if (type === 'summer-camp') {
+        showToast('Summer Camp Schedule: Mon-Fri 9 AM - 12 PM starting July 1st.', 'success');
+      } else if (type === 'orientation') {
+        showToast('Orientation timings: June 1st, 10:00 AM in the school assembly hall.', 'success');
+      }
+    });
   });
 }
